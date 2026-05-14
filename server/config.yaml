@@ -1,0 +1,42 @@
+# ============================================================
+# Windows Bridge Server – Configuration
+# ============================================================
+
+server:
+  host: "0.0.0.0"          # Listen on all interfaces
+  command_port: 9000        # Port for ADB/fastboot/shell/tacdev commands
+  serial_log_port: 9001     # Port for streaming serial logs
+  auth_token: ""            # Set a secret token to require auth (empty = no auth)
+  max_clients: 5            # Max simultaneous command clients
+
+adb:
+  path: "adb"               # Full path to adb.exe, or just "adb" if on PATH
+  default_timeout: 30       # Seconds before a command times out
+  device_serial: ""         # Target a specific ADB device serial (empty = first device)
+
+fastboot:
+  path: "fastboot"          # Full path to fastboot.exe, or just "fastboot" if on PATH
+  default_timeout: 120      # Seconds (flashing can take a while)
+  device_serial: ""         # Target a specific fastboot device serial (empty = first device)
+
+serial:
+  port: "COM15"              # Windows COM port the device UART is connected to
+  baudrate: 115200          # Baud rate – must match the device UART configuration
+  bytesize: 8
+  parity: "N"               # N=None, E=Even, O=Odd
+  stopbits: 1
+  timeout: 1                # Read timeout in seconds
+  log_file: "serial_output.log"   # Local log file on the Windows machine
+
+tacdev:
+  enabled: true             # Set to false to disable TACDev integration
+
+  # Device identification – two options (vtp_number takes priority):
+  vtp_number: "COM3"    # VTP number / port name printed on the TAC device label
+                            # When set, the server scans all TAC devices and selects the one
+                            # whose PortName() or SerialNumber() matches this value.
+  device_number: 0          # Fallback: TACDev device index (0-based) used when vtp_number
+                            # is empty or not found.
+
+  post_action_sleep: 5      # Seconds to sleep after every power/boot-mode action
+                            # (PowerOffButton, PowerOnButton, BootTo*Button calls)

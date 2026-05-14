@@ -1,0 +1,556 @@
+2026-04-16 18:24:37,422 [INFO] bridge_server: Loaded config from C:\Users\pankpati\t3000_\server\config.yaml
+2026-04-16 18:24:37,431 [INFO] bridge.serial_handler: Serial log manager started – port=COM4 baud=115200
+2026-04-16 18:24:37,454 [INFO] bridge.serial_handler: Serial port COM4 opened
+2026-04-16 18:24:37,735 [INFO] bridge_server: Command client connected: ('127.0.0.1', 58031)
+2026-04-16 18:24:37,735 [INFO] bridge_server: Request from ('127.0.0.1', 58031): type=ping id=d2e311b8-ba29-4dac-b0f2-f556b41177da
+2026-04-16 18:24:37,739 [INFO] bridge_server: Command client connected: ('127.0.0.1', 58032)
+2026-04-16 18:24:37,758 [INFO] bridge_server: Command client ('127.0.0.1', 58031) disconnected
+2026-04-16 18:24:37,758 [INFO] bridge_server: Command client ('127.0.0.1', 58031) disconnected (active=1)
+2026-04-16 18:24:37,759 [INFO] bridge_server: Request from ('127.0.0.1', 58032): type=list_devices id=14f4ee0a-21eb-48bc-92a2-c0a856cba87b
+2026-04-16 18:24:37,760 [ERROR] bridge.command_handler: Executable not found: [WinError 2] The system cannot find the file specified
+2026-04-16 18:24:37,762 [ERROR] bridge.command_handler: Executable not found: [WinError 2] The system cannot find the file specified
+2026-04-16 18:24:37,776 [INFO] bridge_server: Command client connected: ('127.0.0.1', 58033)
+2026-04-16 18:24:37,776 [INFO] bridge_server: Command client ('127.0.0.1', 58032) disconnected
+2026-04-16 18:24:37,776 [INFO] bridge_server: Command client ('127.0.0.1', 58032) disconnected (active=1)
+2026-04-16 18:24:37,776 [INFO] bridge_server: Request from ('127.0.0.1', 58033): type=shell id=e42559f4-9312-4900-936e-1005d05202af
+2026-04-16 18:24:37,777 [INFO] bridge.command_handler: Shell ▶ echo BRIDGE_TEST_OK
+2026-04-16 18:24:37,791 [INFO] bridge_server: Command client connected: ('127.0.0.1', 58034)
+2026-04-16 18:24:37,792 [INFO] bridge_server: Command client ('127.0.0.1', 58033) disconnected
+2026-04-16 18:24:37,795 [INFO] bridge_server: Request from ('127.0.0.1', 58034): type=tac_list_devices id=bcdf76b4-4d10-45ce-850b-4041b3fd0593
+2026-04-16 18:24:37,796 [INFO] bridge_server: Command client ('127.0.0.1', 58033) disconnected (active=1)
+2026-04-16 18:24:37,862 [INFO] bridge.tacdev_handler: TAC device list: 1 device(s) found
+2026-04-16 18:24:37,872 [INFO] bridge.client: Connecting to 127.0.0.1:9000 ...
+2026-04-16 18:24:37,873 [INFO] bridge.client: Connected to bridge server at 127.0.0.1:9000
+2026-04-16 18:24:37,873 [INFO] bridge_server: Command client connected: ('127.0.0.1', 58035)
+2026-04-16 18:24:37,873 [INFO] bridge_server: Request from ('127.0.0.1', 58035): type=ping id=d6a1d159-9087-4cc0-949f-c2c325cab236
+2026-04-16 18:24:37,874 [INFO] bridge_server: Request from ('127.0.0.1', 58035): type=shell id=025be6b3-8101-422b-8266-cb9b1fa3dffe
+2026-04-16 18:24:37,874 [INFO] bridge.command_handler: Shell ▶ echo CLIENT_TEST_OK
+2026-04-16 18:24:37,913 [INFO] bridge_server: Request from ('127.0.0.1', 58035): type=tac_list_devices id=9bb679c2-38aa-4098-80a8-f4b76abaf3a7
+2026-04-16 18:24:37,951 [INFO] bridge.tacdev_handler: TAC device list: 1 device(s) found
+2026-04-16 18:24:37,952 [INFO] bridge_server: Command client ('127.0.0.1', 58035) disconnected
+2026-04-16 18:24:37,952 [INFO] bridge.client: Disconnected from bridge server
+2026-04-16 18:24:37,952 [INFO] bridge_server: Command client ('127.0.0.1', 58035) disconnected (active=1)
+2026-04-20 15:56:47,894 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-20 15:56:47,900 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-20 15:56:47,900 [INFO] bridge_server: ============================================================
+2026-04-20 15:56:47,901 [INFO] bridge_server: Windows Bridge Server started
+2026-04-20 15:56:47,901 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-20 15:56:47,901 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-20 15:56:47,901 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-20 15:56:47,901 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-20 15:56:47,902 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-20 15:56:47,902 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-20 15:56:47,902 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-20 15:56:47,902 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-20 15:56:47,902 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-20 15:56:47,903 [INFO] bridge_server:   Auth required     : False
+2026-04-20 15:56:47,903 [INFO] bridge_server: ============================================================
+2026-04-20 15:56:47,931 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-20 15:58:46,862 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 42740)
+2026-04-20 15:58:46,863 [INFO] bridge_server: Serial log client ('10.190.106.180', 42740) subscribed
+2026-04-20 15:58:48,866 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57082)
+2026-04-20 15:58:48,867 [INFO] bridge_server: Request from ('10.190.106.180', 57082): type=tac_power_cycle id=9be5a9be-15fe-4deb-9631-ad0d29e25794
+2026-04-20 15:58:49,099 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-20 15:58:52,300 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-20 15:58:53,316 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-20 15:59:01,523 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-20 15:59:02,526 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-20 15:59:07,528 [INFO] bridge_server: Command client ('10.190.106.180', 57082) disconnected
+2026-04-20 15:59:07,528 [INFO] bridge_server: Command client ('10.190.106.180', 57082) disconnected (active=0)
+2026-04-20 16:02:08,518 [INFO] bridge_server: Serial log client ('10.190.106.180', 42740) disconnected
+2026-04-20 16:02:08,518 [INFO] bridge_server: Serial log client ('10.190.106.180', 42740) cleaned up
+2026-04-20 16:02:48,425 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 44452)
+2026-04-20 16:02:48,425 [INFO] bridge_server: Serial log client ('10.190.106.180', 44452) subscribed
+2026-04-20 16:02:51,428 [INFO] bridge_server: Command client connected: ('10.190.106.180', 56288)
+2026-04-20 16:02:51,429 [INFO] bridge_server: Request from ('10.190.106.180', 56288): type=tac_power_cycle id=315a351a-7c2b-4f73-ab2f-f14b32e32004
+2026-04-20 16:02:51,517 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-20 16:02:54,713 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-20 16:02:55,718 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-20 16:03:03,908 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-20 16:03:04,922 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-20 16:03:09,923 [INFO] bridge_server: Command client ('10.190.106.180', 56288) disconnected
+2026-04-20 16:03:09,924 [INFO] bridge_server: Command client ('10.190.106.180', 56288) disconnected (active=0)
+2026-04-20 16:06:31,425 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-20 16:06:31,425 [INFO] bridge_server: Bridge server shut down
+2026-04-20 16:06:31,528 [ERROR] bridge.serial_handler: Unexpected error in serial reader
+Traceback (most recent call last):
+  File "C:\Dropbox\ninad\t3000_\server\serial_handler.py", line 152, in _reader_thread_fn
+    self._log_fh.write(f"[{ts}] {line}\n")
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.
+2026-04-20 16:06:31,797 [INFO] bridge_server: Serial log client ('10.190.106.180', 44452) cleaned up
+2026-04-20 16:06:31,798 [INFO] bridge_server: Interrupted by user
+2026-04-20 16:07:25,318 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-20 16:07:25,324 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-20 16:07:25,325 [INFO] bridge_server: ============================================================
+2026-04-20 16:07:25,325 [INFO] bridge_server: Windows Bridge Server started
+2026-04-20 16:07:25,325 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-20 16:07:25,325 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-20 16:07:25,326 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-20 16:07:25,326 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-20 16:07:25,326 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-20 16:07:25,326 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-20 16:07:25,326 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-20 16:07:25,326 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-20 16:07:25,326 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-20 16:07:25,327 [INFO] bridge_server:   Auth required     : False
+2026-04-20 16:07:25,327 [INFO] bridge_server: ============================================================
+2026-04-20 16:07:25,354 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-20 16:08:38,880 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 51550)
+2026-04-20 16:08:38,880 [INFO] bridge_server: Serial log client ('10.190.106.180', 51550) subscribed
+2026-04-20 16:08:40,884 [INFO] bridge_server: Command client connected: ('10.190.106.180', 50378)
+2026-04-20 16:08:40,885 [INFO] bridge_server: Request from ('10.190.106.180', 50378): type=adb id=c99fd353-c1c6-458d-a9f3-9e528faed206
+2026-04-20 16:08:40,887 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot
+2026-04-20 16:08:40,994 [INFO] bridge_server: Command client ('10.190.106.180', 50378) disconnected
+2026-04-20 16:08:40,994 [INFO] bridge_server: Command client ('10.190.106.180', 50378) disconnected (active=0)
+2026-04-20 16:10:03,543 [INFO] bridge_server: Serial log client ('10.190.106.180', 51550) disconnected
+2026-04-20 16:10:03,544 [INFO] bridge_server: Serial log client ('10.190.106.180', 51550) cleaned up
+2026-04-20 16:10:21,695 [INFO] bridge_server: Command client connected: ('10.190.106.180', 43072)
+2026-04-20 16:10:21,696 [INFO] bridge_server: Request from ('10.190.106.180', 43072): type=adb id=7c28593e-e4a7-4578-9e35-841e4077ff2e
+2026-04-20 16:10:21,697 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 root
+2026-04-20 16:10:25,663 [INFO] bridge_server: Request from ('10.190.106.180', 43072): type=adb id=38313298-f263-46aa-9b37-2bbe4126d27d
+2026-04-20 16:10:25,663 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell id
+2026-04-20 16:10:25,784 [INFO] bridge_server: Request from ('10.190.106.180', 43072): type=adb id=816d31aa-3620-47fc-953a-3ae6ebce042b
+2026-04-20 16:10:25,784 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell reboot
+2026-04-20 16:10:25,911 [INFO] bridge_server: Command client ('10.190.106.180', 43072) disconnected
+2026-04-20 16:10:25,911 [INFO] bridge_server: Command client ('10.190.106.180', 43072) disconnected (active=0)
+2026-04-20 16:10:40,285 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 48416)
+2026-04-20 16:10:40,285 [INFO] bridge_server: Serial log client ('10.190.106.180', 48416) subscribed
+2026-04-20 16:10:48,566 [INFO] bridge_server: Serial log client ('10.190.106.180', 48416) disconnected
+2026-04-20 16:10:48,566 [INFO] bridge_server: Serial log client ('10.190.106.180', 48416) cleaned up
+2026-04-20 16:12:35,276 [INFO] bridge_server: Command client connected: ('10.190.106.180', 51894)
+2026-04-20 16:12:35,277 [INFO] bridge_server: Request from ('10.190.106.180', 51894): type=tac_power_off id=24755c99-e40c-4a08-abac-c329f80c27f9
+2026-04-20 16:12:35,537 [INFO] bridge.tacdev_handler: TAC power OFF – device 0 (sleep 15.0 s after)
+2026-04-20 16:12:39,737 [INFO] bridge.tacdev_handler: PowerOffButton() done – sleeping 15.0 s
+2026-04-20 16:12:54,740 [INFO] bridge_server: Command client ('10.190.106.180', 51894) disconnected
+2026-04-20 16:12:54,741 [INFO] bridge_server: Command client ('10.190.106.180', 51894) disconnected (active=0)
+2026-04-20 16:12:54,741 [INFO] bridge_server: Command client connected: ('10.190.106.180', 37172)
+2026-04-20 16:12:54,741 [INFO] bridge_server: Request from ('10.190.106.180', 37172): type=list_devices id=b08ff712-6217-499d-b893-12e69232d990
+2026-04-20 16:12:54,899 [INFO] bridge_server: Command client ('10.190.106.180', 37172) disconnected
+2026-04-20 16:12:54,899 [INFO] bridge_server: Command client ('10.190.106.180', 37172) disconnected (active=0)
+2026-04-20 16:12:54,900 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 39288)
+2026-04-20 16:12:54,900 [INFO] bridge_server: Serial log client ('10.190.106.180', 39288) subscribed
+2026-04-20 16:12:56,904 [INFO] bridge_server: Command client connected: ('10.190.106.180', 37176)
+2026-04-20 16:12:56,905 [INFO] bridge_server: Request from ('10.190.106.180', 37176): type=tac_power_on id=fd5512ba-51f6-4636-977b-90bbf1a71116
+2026-04-20 16:12:56,984 [INFO] bridge.tacdev_handler: TAC power ON – device 0 (sleep 5.0 s after)
+2026-04-20 16:13:01,188 [INFO] bridge.tacdev_handler: PowerOnButton() done – sleeping 5.0 s
+2026-04-20 16:13:06,189 [INFO] bridge_server: Command client ('10.190.106.180', 37176) disconnected
+2026-04-20 16:13:06,190 [INFO] bridge_server: Command client ('10.190.106.180', 37176) disconnected (active=0)
+2026-04-20 16:17:06,585 [INFO] bridge_server: Serial log client ('10.190.106.180', 39288) disconnected
+2026-04-20 16:17:06,586 [INFO] bridge_server: Serial log client ('10.190.106.180', 39288) cleaned up
+2026-04-20 16:17:59,720 [INFO] bridge_server: Command client connected: ('10.190.106.180', 50108)
+2026-04-20 16:17:59,720 [INFO] bridge_server: Request from ('10.190.106.180', 50108): type=tac_list_devices id=4814808a-cbdd-4aa2-80b0-19f70a16ed4e
+2026-04-20 16:17:59,809 [INFO] bridge.tacdev_handler: TAC device list: 1 device(s)
+2026-04-20 16:17:59,810 [INFO] bridge_server: Request from ('10.190.106.180', 50108): type=tac_get_versions id=eb9d40c8-14b8-4e54-abe5-b976cb21ea4f
+2026-04-20 16:17:59,811 [INFO] bridge_server: Request from ('10.190.106.180', 50108): type=tac_get_info id=e4bfce55-0a3a-428d-9e54-ae216aa48313
+2026-04-20 16:18:04,108 [INFO] bridge_server: Request from ('10.190.106.180', 50108): type=tac_get_status id=6c088efa-f89f-4b09-87dc-74d51667df66
+2026-04-20 16:18:08,410 [INFO] bridge_server: Request from ('10.190.106.180', 50108): type=list_devices id=4049687f-c77e-49c5-bf39-f26a3984e7d2
+2026-04-20 16:18:08,562 [INFO] bridge_server: Command client ('10.190.106.180', 50108) disconnected
+2026-04-20 16:18:08,562 [INFO] bridge_server: Command client ('10.190.106.180', 50108) disconnected (active=0)
+2026-04-20 16:18:49,229 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-20 16:18:49,230 [INFO] bridge_server: Bridge server shut down
+2026-04-20 16:42:09,112 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-20 16:42:09,117 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-20 16:42:09,118 [INFO] bridge_server: ============================================================
+2026-04-20 16:42:09,119 [INFO] bridge_server: Windows Bridge Server started
+2026-04-20 16:42:09,119 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-20 16:42:09,119 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-20 16:42:09,119 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-20 16:42:09,119 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-20 16:42:09,120 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-20 16:42:09,120 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-20 16:42:09,120 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-20 16:42:09,120 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-20 16:42:09,120 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-20 16:42:09,120 [INFO] bridge_server:   Auth required     : False
+2026-04-20 16:42:09,120 [INFO] bridge_server: ============================================================
+2026-04-20 16:42:09,149 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-20 16:43:18,650 [INFO] bridge_server: Command client connected: ('10.190.106.180', 52656)
+2026-04-20 16:43:18,651 [INFO] bridge_server: Request from ('10.190.106.180', 52656): type=ping id=a45b632a-ede8-4d00-ac4f-b145c6a92409
+2026-04-20 16:43:18,654 [INFO] bridge_server: Command client ('10.190.106.180', 52656) disconnected
+2026-04-20 16:43:18,654 [INFO] bridge_server: Command client ('10.190.106.180', 52656) disconnected (active=0)
+2026-04-20 16:43:34,160 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 55316)
+2026-04-20 16:43:34,160 [INFO] bridge_server: Serial log client ('10.190.106.180', 55316) subscribed
+2026-04-20 16:43:35,163 [INFO] bridge_server: Command client connected: ('10.190.106.180', 47540)
+2026-04-20 16:43:35,164 [INFO] bridge_server: Request from ('10.190.106.180', 47540): type=tac_power_cycle id=2c57e038-7be2-46c9-9c8b-42791801d962
+2026-04-20 16:43:35,418 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-20 16:43:38,618 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-20 16:43:39,631 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-20 16:43:47,837 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-20 16:43:48,849 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-20 16:43:53,851 [INFO] bridge_server: Command client ('10.190.106.180', 47540) disconnected
+2026-04-20 16:43:53,851 [INFO] bridge_server: Command client ('10.190.106.180', 47540) disconnected (active=0)
+2026-04-20 16:45:24,648 [INFO] bridge_server: Serial log client ('10.190.106.180', 55316) disconnected
+2026-04-20 16:45:24,648 [INFO] bridge_server: Serial log client ('10.190.106.180', 55316) cleaned up
+2026-04-20 16:45:50,585 [INFO] bridge_server: Command client connected: ('10.190.106.180', 56548)
+2026-04-20 16:45:50,586 [INFO] bridge_server: Request from ('10.190.106.180', 56548): type=list_devices id=332f6354-52cb-457f-8450-eb22f2a40487
+2026-04-20 16:45:50,747 [INFO] bridge_server: Command client ('10.190.106.180', 56548) disconnected
+2026-04-20 16:45:50,747 [INFO] bridge_server: Command client ('10.190.106.180', 56548) disconnected (active=0)
+2026-04-20 16:46:21,347 [INFO] bridge_server: Command client connected: ('10.190.106.180', 52036)
+2026-04-20 16:46:21,347 [INFO] bridge_server: Request from ('10.190.106.180', 52036): type=adb id=6500f9d2-f5dd-47ef-b8c5-6c013c0dcb93
+2026-04-20 16:46:21,347 [INFO] bridge.command_handler: ADB ▶ adb shell cat /proc/version
+2026-04-20 16:46:21,459 [INFO] bridge_server: Command client ('10.190.106.180', 52036) disconnected
+2026-04-20 16:46:21,459 [INFO] bridge_server: Command client ('10.190.106.180', 52036) disconnected (active=0)
+2026-04-20 16:46:21,461 [INFO] bridge_server: Command client connected: ('10.190.106.180', 52050)
+2026-04-20 16:46:21,462 [INFO] bridge_server: Request from ('10.190.106.180', 52050): type=adb id=c92b289d-06db-44f4-9495-7cb5193ef386
+2026-04-20 16:46:21,462 [INFO] bridge.command_handler: ADB ▶ adb shell uname -a
+2026-04-20 16:46:21,567 [INFO] bridge_server: Command client ('10.190.106.180', 52050) disconnected
+2026-04-20 16:46:21,567 [INFO] bridge_server: Command client ('10.190.106.180', 52050) disconnected (active=0)
+2026-04-20 16:46:21,568 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 55160)
+2026-04-20 16:46:21,568 [INFO] bridge_server: Serial log client ('10.190.106.180', 55160) subscribed
+2026-04-20 16:46:36,645 [INFO] bridge_server: Serial log client ('10.190.106.180', 55160) disconnected
+2026-04-20 16:46:36,646 [INFO] bridge_server: Serial log client ('10.190.106.180', 55160) cleaned up
+2026-04-20 16:46:53,740 [INFO] bridge_server: Command client connected: ('10.190.106.180', 32838)
+2026-04-20 16:46:53,740 [INFO] bridge_server: Request from ('10.190.106.180', 32838): type=adb id=dc881076-aecf-4a71-832c-191970c3c90e
+2026-04-20 16:46:53,740 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell cat /proc/version
+2026-04-20 16:46:53,847 [INFO] bridge_server: Request from ('10.190.106.180', 32838): type=adb id=1d50734f-3a43-4929-91a3-c0c4beba50c6
+2026-04-20 16:46:53,848 [INFO] bridge.command_handler: ADB ▶ adb -s b15fcc25 shell cat /proc/version
+2026-04-20 16:46:53,958 [INFO] bridge_server: Command client ('10.190.106.180', 32838) disconnected
+2026-04-20 16:46:53,959 [INFO] bridge_server: Command client ('10.190.106.180', 32838) disconnected (active=0)
+2026-04-20 16:46:53,959 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 53160)
+2026-04-20 16:46:53,959 [INFO] bridge_server: Serial log client ('10.190.106.180', 53160) subscribed
+2026-04-20 16:46:55,964 [INFO] bridge_server: Command client connected: ('10.190.106.180', 32846)
+2026-04-20 16:46:55,964 [INFO] bridge_server: Request from ('10.190.106.180', 32846): type=tac_power_cycle id=d296052a-e36c-4df8-a249-fad28a1b8803
+2026-04-20 16:46:56,027 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-20 16:46:59,206 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-20 16:47:00,211 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-20 16:47:08,403 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-20 16:47:09,415 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-20 16:47:14,417 [INFO] bridge_server: Command client ('10.190.106.180', 32846) disconnected
+2026-04-20 16:47:14,417 [INFO] bridge_server: Command client ('10.190.106.180', 32846) disconnected (active=0)
+2026-04-20 16:49:14,641 [INFO] bridge_server: Serial log client ('10.190.106.180', 53160) disconnected
+2026-04-20 16:49:14,641 [INFO] bridge_server: Serial log client ('10.190.106.180', 53160) cleaned up
+2026-04-20 16:55:29,074 [INFO] bridge_server: Command client connected: ('10.190.106.180', 56014)
+2026-04-20 16:55:29,074 [INFO] bridge_server: Request from ('10.190.106.180', 56014): type=adb id=85c17f2b-f1de-4ef2-8fad-7d6d60900c1d
+2026-04-20 16:55:29,075 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell cat /sys/kernel/debug/devices_deferred
+2026-04-20 16:55:29,187 [INFO] bridge_server: Request from ('10.190.106.180', 56014): type=adb id=ab8b9f9d-2f28-4229-942a-32a56be4a12e
+2026-04-20 16:55:29,187 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell cat /sys/kernel/debug/probe_deferred
+2026-04-20 16:55:29,292 [INFO] bridge_server: Command client ('10.190.106.180', 56014) disconnected
+2026-04-20 16:55:29,292 [INFO] bridge_server: Command client ('10.190.106.180', 56014) disconnected (active=0)
+2026-04-20 16:55:35,707 [INFO] bridge_server: Command client connected: ('10.190.106.180', 47488)
+2026-04-20 16:55:35,708 [INFO] bridge_server: Request from ('10.190.106.180', 47488): type=adb id=cff1a42a-c4eb-4181-8549-2ad7e9461bc6
+2026-04-20 16:55:35,708 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell su -c 'cat /sys/kernel/debug/devices_deferred'
+2026-04-20 16:56:05,767 [WARNING] bridge.command_handler: Command timed out: adb -s 34c70d59 shell su -c 'cat /sys/kernel/debug/devices_deferred'
+2026-04-20 16:56:05,767 [INFO] bridge_server: Command client ('10.190.106.180', 47488) disconnected
+2026-04-20 16:56:05,768 [INFO] bridge_server: Command client ('10.190.106.180', 47488) disconnected (active=0)
+2026-04-20 16:56:11,128 [INFO] bridge_server: Command client connected: ('10.190.106.180', 39606)
+2026-04-20 16:56:11,128 [INFO] bridge_server: Request from ('10.190.106.180', 39606): type=adb id=ae1d457b-c11c-4524-aa54-e0288d63789e
+2026-04-20 16:56:11,128 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell id
+2026-04-20 16:56:11,237 [INFO] bridge_server: Request from ('10.190.106.180', 39606): type=adb id=e7988f54-3c00-4719-b059-851543427da1
+2026-04-20 16:56:11,238 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell mount | grep debugfs
+2026-04-20 16:56:11,342 [INFO] bridge_server: Request from ('10.190.106.180', 39606): type=adb id=4e7ebacd-7b1c-4e20-b5fc-6f6287743c8d
+2026-04-20 16:56:11,342 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 root
+2026-04-20 16:56:11,876 [INFO] bridge_server: Command client ('10.190.106.180', 39606) disconnected
+2026-04-20 16:56:11,877 [INFO] bridge_server: Command client ('10.190.106.180', 39606) disconnected (active=0)
+2026-04-20 16:56:21,540 [INFO] bridge_server: Command client connected: ('10.190.106.180', 60238)
+2026-04-20 16:56:21,541 [INFO] bridge_server: Request from ('10.190.106.180', 60238): type=adb id=d8f9f70e-64cc-4d33-815c-58fb580131dd
+2026-04-20 16:56:21,541 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell id
+2026-04-20 16:56:21,663 [INFO] bridge_server: Request from ('10.190.106.180', 60238): type=adb id=2cac36c6-4706-4ae6-ba6d-366de1cf6f69
+2026-04-20 16:56:21,663 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell cat /sys/kernel/debug/devices_deferred
+2026-04-20 16:56:21,776 [INFO] bridge_server: Command client ('10.190.106.180', 60238) disconnected
+2026-04-20 16:56:21,776 [INFO] bridge_server: Command client ('10.190.106.180', 60238) disconnected (active=0)
+2026-04-20 16:56:47,161 [INFO] bridge_server: Command client connected: ('10.190.106.180', 53304)
+2026-04-20 16:56:47,162 [INFO] bridge_server: Request from ('10.190.106.180', 53304): type=adb id=cbdbf4f9-47a4-4ee9-9492-87259a25eb7e
+2026-04-20 16:56:47,162 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell dmesg | grep -i 'deferred'
+2026-04-20 16:56:47,291 [INFO] bridge_server: Command client ('10.190.106.180', 53304) disconnected
+2026-04-20 16:56:47,291 [INFO] bridge_server: Command client ('10.190.106.180', 53304) disconnected (active=0)
+2026-04-20 17:04:11,379 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57888)
+2026-04-20 17:04:11,380 [INFO] bridge_server: Request from ('10.190.106.180', 57888): type=adb id=cffa8786-fab8-4be2-be84-ef77430ef89f
+2026-04-20 17:04:11,380 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot bootloader
+2026-04-20 17:04:11,537 [INFO] bridge_server: Command client ('10.190.106.180', 57888) disconnected
+2026-04-20 17:04:11,538 [INFO] bridge_server: Command client ('10.190.106.180', 57888) disconnected (active=0)
+2026-04-20 17:04:26,555 [INFO] bridge_server: Command client connected: ('10.190.106.180', 55428)
+2026-04-20 17:04:26,556 [INFO] bridge_server: Request from ('10.190.106.180', 55428): type=fastboot id=5010773b-539e-435e-b29f-87b66288f946
+2026-04-20 17:04:26,556 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:04:26,603 [INFO] bridge_server: Command client ('10.190.106.180', 55428) disconnected
+2026-04-20 17:04:26,604 [INFO] bridge_server: Command client ('10.190.106.180', 55428) disconnected (active=0)
+2026-04-20 17:06:15,920 [INFO] bridge_server: Command client connected: ('10.190.106.180', 52214)
+2026-04-20 17:06:15,921 [INFO] bridge_server: Request from ('10.190.106.180', 52214): type=fastboot_boot id=74e10a82-e1f4-4a94-b237-dff9b1819ccb
+2026-04-20 17:06:15,921 [INFO] bridge.command_handler: Fastboot boot ▶ fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:06:17,097 [INFO] bridge_server: Command client ('10.190.106.180', 52214) disconnected
+2026-04-20 17:06:17,097 [INFO] bridge_server: Command client ('10.190.106.180', 52214) disconnected (active=0)
+2026-04-20 17:07:52,944 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 56222)
+2026-04-20 17:07:52,944 [INFO] bridge_server: Serial log client ('10.190.106.180', 56222) subscribed
+2026-04-20 17:09:12,662 [INFO] bridge_server: Serial log client ('10.190.106.180', 56222) disconnected
+2026-04-20 17:09:12,662 [INFO] bridge_server: Serial log client ('10.190.106.180', 56222) cleaned up
+2026-04-20 17:12:21,177 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 57526)
+2026-04-20 17:12:21,177 [INFO] bridge_server: Serial log client ('10.190.106.180', 57526) subscribed
+2026-04-20 17:14:21,672 [INFO] bridge_server: Serial log client ('10.190.106.180', 57526) disconnected
+2026-04-20 17:14:21,672 [INFO] bridge_server: Serial log client ('10.190.106.180', 57526) cleaned up
+2026-04-20 17:17:37,907 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-20 17:17:37,907 [INFO] bridge_server: Bridge server shut down
+2026-04-20 17:17:43,568 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-20 17:17:43,572 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-20 17:17:43,573 [INFO] bridge_server: ============================================================
+2026-04-20 17:17:43,573 [INFO] bridge_server: Windows Bridge Server started
+2026-04-20 17:17:43,574 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-20 17:17:43,574 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-20 17:17:43,574 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-20 17:17:43,574 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-20 17:17:43,575 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-20 17:17:43,575 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-20 17:17:43,575 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-20 17:17:43,575 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-20 17:17:43,575 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-20 17:17:43,576 [INFO] bridge_server:   Auth required     : False
+2026-04-20 17:17:43,576 [INFO] bridge_server: ============================================================
+2026-04-20 17:17:43,604 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-20 17:18:38,305 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 43124)
+2026-04-20 17:18:38,306 [INFO] bridge_server: Serial log client ('10.190.106.180', 43124) subscribed
+2026-04-20 17:18:41,309 [INFO] bridge_server: Command client connected: ('10.190.106.180', 49082)
+2026-04-20 17:18:41,309 [INFO] bridge_server: Request from ('10.190.106.180', 49082): type=adb id=4a7f896b-2233-4957-9edd-b0a301d5f5af
+2026-04-20 17:18:41,311 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot bootloader
+2026-04-20 17:19:11,377 [WARNING] bridge.command_handler: Command timed out: adb -s 34c70d59 reboot bootloader
+2026-04-20 17:19:11,378 [INFO] bridge_server: Command client ('10.190.106.180', 49082) disconnected
+2026-04-20 17:19:11,378 [INFO] bridge_server: Command client ('10.190.106.180', 49082) disconnected (active=0)
+2026-04-20 17:19:12,671 [INFO] bridge_server: Serial log client ('10.190.106.180', 43124) disconnected
+2026-04-20 17:19:12,671 [INFO] bridge_server: Serial log client ('10.190.106.180', 43124) cleaned up
+2026-04-20 17:19:29,206 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 37486)
+2026-04-20 17:19:29,207 [INFO] bridge_server: Serial log client ('10.190.106.180', 37486) subscribed
+2026-04-20 17:19:32,210 [INFO] bridge_server: Command client connected: ('10.190.106.180', 60002)
+2026-04-20 17:19:32,211 [INFO] bridge_server: Request from ('10.190.106.180', 60002): type=adb id=2f5caff6-ad5c-4098-ad6e-c91cd121dafa
+2026-04-20 17:19:32,211 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot bootloader
+2026-04-20 17:20:02,267 [WARNING] bridge.command_handler: Command timed out: adb -s 34c70d59 reboot bootloader
+2026-04-20 17:20:02,268 [INFO] bridge_server: Command client ('10.190.106.180', 60002) disconnected
+2026-04-20 17:20:02,268 [INFO] bridge_server: Command client ('10.190.106.180', 60002) disconnected (active=0)
+2026-04-20 17:20:03,242 [INFO] bridge_server: Command client connected: ('10.190.106.180', 33736)
+2026-04-20 17:20:03,242 [INFO] bridge_server: Request from ('10.190.106.180', 33736): type=fastboot id=2c7e3bb1-ea70-42ed-bfa3-dd9b45f58c92
+2026-04-20 17:20:03,243 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:20:03,292 [INFO] bridge_server: Command client ('10.190.106.180', 33736) disconnected
+2026-04-20 17:20:03,292 [INFO] bridge_server: Command client ('10.190.106.180', 33736) disconnected (active=0)
+2026-04-20 17:20:03,292 [INFO] bridge_server: Command client connected: ('10.190.106.180', 33746)
+2026-04-20 17:20:03,293 [INFO] bridge_server: Request from ('10.190.106.180', 33746): type=fastboot_boot id=a9c13a37-e4c8-4785-aeb0-14315d0ad8fe
+2026-04-20 17:20:03,293 [INFO] bridge.command_handler: Fastboot boot ▶ fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:22:03,322 [WARNING] bridge.command_handler: Command timed out: fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:22:03,323 [INFO] bridge_server: Command client ('10.190.106.180', 33746) disconnected
+2026-04-20 17:22:03,324 [INFO] bridge_server: Command client ('10.190.106.180', 33746) disconnected (active=0)
+2026-04-20 17:25:03,680 [INFO] bridge_server: Serial log client ('10.190.106.180', 37486) disconnected
+2026-04-20 17:25:03,680 [INFO] bridge_server: Serial log client ('10.190.106.180', 37486) cleaned up
+2026-04-20 17:26:06,773 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 33536)
+2026-04-20 17:26:06,774 [INFO] bridge_server: Serial log client ('10.190.106.180', 33536) subscribed
+2026-04-20 17:26:09,778 [INFO] bridge_server: Command client connected: ('10.190.106.180', 45120)
+2026-04-20 17:26:09,779 [INFO] bridge_server: Request from ('10.190.106.180', 45120): type=adb id=a45a0003-c78a-414f-862d-f473b7ecb6f9
+2026-04-20 17:26:09,779 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot bootloader
+2026-04-20 17:26:39,834 [WARNING] bridge.command_handler: Command timed out: adb -s 34c70d59 reboot bootloader
+2026-04-20 17:26:39,834 [INFO] bridge_server: Command client ('10.190.106.180', 45120) disconnected
+2026-04-20 17:26:39,835 [INFO] bridge_server: Command client ('10.190.106.180', 45120) disconnected (active=0)
+2026-04-20 17:26:45,797 [INFO] bridge_server: Command client connected: ('10.190.106.180', 54104)
+2026-04-20 17:26:45,798 [INFO] bridge_server: Request from ('10.190.106.180', 54104): type=fastboot id=ebc8e765-203a-492a-a4e4-750983f5c931
+2026-04-20 17:26:45,798 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:26:45,845 [INFO] bridge_server: Command client ('10.190.106.180', 54104) disconnected
+2026-04-20 17:26:45,846 [INFO] bridge_server: Command client ('10.190.106.180', 54104) disconnected (active=0)
+2026-04-20 17:26:50,853 [INFO] bridge_server: Command client connected: ('10.190.106.180', 54114)
+2026-04-20 17:26:50,853 [INFO] bridge_server: Request from ('10.190.106.180', 54114): type=fastboot id=ce9720f5-30e8-4211-a85c-c466ce9360a1
+2026-04-20 17:26:50,854 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:26:50,902 [INFO] bridge_server: Command client ('10.190.106.180', 54114) disconnected
+2026-04-20 17:26:50,902 [INFO] bridge_server: Command client ('10.190.106.180', 54114) disconnected (active=0)
+2026-04-20 17:26:55,908 [INFO] bridge_server: Command client connected: ('10.190.106.180', 45108)
+2026-04-20 17:26:55,909 [INFO] bridge_server: Request from ('10.190.106.180', 45108): type=fastboot id=4be6403c-e59b-48be-b7e5-70accdbe4952
+2026-04-20 17:26:55,909 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:26:55,958 [INFO] bridge_server: Command client ('10.190.106.180', 45108) disconnected
+2026-04-20 17:26:55,958 [INFO] bridge_server: Command client ('10.190.106.180', 45108) disconnected (active=0)
+2026-04-20 17:27:00,965 [INFO] bridge_server: Command client connected: ('10.190.106.180', 45124)
+2026-04-20 17:27:00,966 [INFO] bridge_server: Request from ('10.190.106.180', 45124): type=fastboot id=0687c557-029e-40ee-98cb-ff211ec1dd95
+2026-04-20 17:27:00,966 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:27:01,013 [INFO] bridge_server: Command client ('10.190.106.180', 45124) disconnected
+2026-04-20 17:27:01,013 [INFO] bridge_server: Command client ('10.190.106.180', 45124) disconnected (active=0)
+2026-04-20 17:27:06,021 [INFO] bridge_server: Command client connected: ('10.190.106.180', 50384)
+2026-04-20 17:27:06,022 [INFO] bridge_server: Request from ('10.190.106.180', 50384): type=fastboot id=655eff48-8428-44be-9025-138cb9e0c705
+2026-04-20 17:27:06,022 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:27:06,067 [INFO] bridge_server: Command client ('10.190.106.180', 50384) disconnected
+2026-04-20 17:27:06,068 [INFO] bridge_server: Command client ('10.190.106.180', 50384) disconnected (active=0)
+2026-04-20 17:27:11,074 [INFO] bridge_server: Command client connected: ('10.190.106.180', 50388)
+2026-04-20 17:27:11,074 [INFO] bridge_server: Request from ('10.190.106.180', 50388): type=fastboot id=c3cb697d-6924-46f2-aed0-ae8a0054a2fd
+2026-04-20 17:27:11,074 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:27:11,122 [INFO] bridge_server: Command client ('10.190.106.180', 50388) disconnected
+2026-04-20 17:27:11,123 [INFO] bridge_server: Command client ('10.190.106.180', 50388) disconnected (active=0)
+2026-04-20 17:27:16,130 [INFO] bridge_server: Command client connected: ('10.190.106.180', 53738)
+2026-04-20 17:27:16,131 [INFO] bridge_server: Request from ('10.190.106.180', 53738): type=fastboot id=8fd17acb-64f4-44c2-b1d2-30febdb9d78b
+2026-04-20 17:27:16,131 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:27:16,176 [INFO] bridge_server: Command client ('10.190.106.180', 53738) disconnected
+2026-04-20 17:27:16,177 [INFO] bridge_server: Command client ('10.190.106.180', 53738) disconnected (active=0)
+2026-04-20 17:27:21,183 [INFO] bridge_server: Command client connected: ('10.190.106.180', 53744)
+2026-04-20 17:27:21,183 [INFO] bridge_server: Request from ('10.190.106.180', 53744): type=fastboot id=ed0a724f-f10d-40fb-ada3-652ef7adff8d
+2026-04-20 17:27:21,183 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:27:21,230 [INFO] bridge_server: Command client ('10.190.106.180', 53744) disconnected
+2026-04-20 17:27:21,230 [INFO] bridge_server: Command client ('10.190.106.180', 53744) disconnected (active=0)
+2026-04-20 17:27:26,238 [INFO] bridge_server: Command client connected: ('10.190.106.180', 39628)
+2026-04-20 17:27:26,239 [INFO] bridge_server: Request from ('10.190.106.180', 39628): type=fastboot id=46b9afd0-9e36-43aa-98cd-2a73e232a27a
+2026-04-20 17:27:26,239 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:27:26,287 [INFO] bridge_server: Command client ('10.190.106.180', 39628) disconnected
+2026-04-20 17:27:26,288 [INFO] bridge_server: Command client ('10.190.106.180', 39628) disconnected (active=0)
+2026-04-20 17:27:26,288 [INFO] bridge_server: Command client connected: ('10.190.106.180', 39642)
+2026-04-20 17:27:26,288 [INFO] bridge_server: Request from ('10.190.106.180', 39642): type=fastboot_boot id=b4740749-0bd1-40f2-820b-8d2230ec83b0
+2026-04-20 17:27:26,289 [INFO] bridge.command_handler: Fastboot boot ▶ fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:29:26,322 [WARNING] bridge.command_handler: Command timed out: fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:29:26,323 [INFO] bridge_server: Command client ('10.190.106.180', 39642) disconnected
+2026-04-20 17:29:26,323 [INFO] bridge_server: Command client ('10.190.106.180', 39642) disconnected (active=0)
+2026-04-20 17:32:26,686 [INFO] bridge_server: Serial log client ('10.190.106.180', 33536) disconnected
+2026-04-20 17:32:26,686 [INFO] bridge_server: Serial log client ('10.190.106.180', 33536) cleaned up
+2026-04-20 17:32:52,321 [INFO] bridge_server: Command client connected: ('10.190.106.180', 49582)
+2026-04-20 17:32:52,322 [INFO] bridge_server: Request from ('10.190.106.180', 49582): type=list_devices id=80ca6017-998d-4c69-a850-f6a8fbeb837d
+2026-04-20 17:32:52,471 [INFO] bridge_server: Request from ('10.190.106.180', 49582): type=adb id=42af3109-b091-4393-9df5-759254b4dc6f
+2026-04-20 17:32:52,472 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell id
+2026-04-20 17:32:52,578 [INFO] bridge_server: Command client ('10.190.106.180', 49582) disconnected
+2026-04-20 17:32:52,578 [INFO] bridge_server: Command client ('10.190.106.180', 49582) disconnected (active=0)
+2026-04-20 17:34:13,015 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 53626)
+2026-04-20 17:34:13,015 [INFO] bridge_server: Serial log client ('10.190.106.180', 53626) subscribed
+2026-04-20 17:34:16,019 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57802)
+2026-04-20 17:34:16,019 [INFO] bridge_server: Request from ('10.190.106.180', 57802): type=tac_boot_fastboot id=bd756aad-e820-4785-b72c-b115be024b1d
+2026-04-20 17:34:16,269 [INFO] bridge.tacdev_handler: TAC boot to Fastboot – device 0 (sleep 5.0 s after)
+2026-04-20 17:34:20,472 [INFO] bridge.tacdev_handler: BootToFastBootButton() done – sleeping 5.0 s
+2026-04-20 17:34:25,474 [INFO] bridge_server: Command client ('10.190.106.180', 57802) disconnected
+2026-04-20 17:34:25,474 [INFO] bridge_server: Command client ('10.190.106.180', 57802) disconnected (active=0)
+2026-04-20 17:34:30,480 [INFO] bridge_server: Command client connected: ('10.190.106.180', 36820)
+2026-04-20 17:34:30,481 [INFO] bridge_server: Request from ('10.190.106.180', 36820): type=fastboot id=0c1cb983-a6db-4947-b7b0-bd652de17f72
+2026-04-20 17:34:30,481 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:34:30,527 [INFO] bridge_server: Command client ('10.190.106.180', 36820) disconnected
+2026-04-20 17:34:30,527 [INFO] bridge_server: Command client ('10.190.106.180', 36820) disconnected (active=0)
+2026-04-20 17:34:35,536 [INFO] bridge_server: Command client connected: ('10.190.106.180', 51432)
+2026-04-20 17:34:35,537 [INFO] bridge_server: Request from ('10.190.106.180', 51432): type=fastboot id=e2e9fc38-095d-461a-8e3f-dbfa36ecb2c6
+2026-04-20 17:34:35,537 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:34:35,584 [INFO] bridge_server: Command client ('10.190.106.180', 51432) disconnected
+2026-04-20 17:34:35,584 [INFO] bridge_server: Command client ('10.190.106.180', 51432) disconnected (active=0)
+2026-04-20 17:34:40,592 [INFO] bridge_server: Command client connected: ('10.190.106.180', 51436)
+2026-04-20 17:34:40,592 [INFO] bridge_server: Request from ('10.190.106.180', 51436): type=fastboot id=5e925a41-afa4-4bdc-808f-179d1a80ca64
+2026-04-20 17:34:40,593 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:34:40,640 [INFO] bridge_server: Command client ('10.190.106.180', 51436) disconnected
+2026-04-20 17:34:40,640 [INFO] bridge_server: Command client ('10.190.106.180', 51436) disconnected (active=0)
+2026-04-20 17:34:45,646 [INFO] bridge_server: Command client connected: ('10.190.106.180', 45990)
+2026-04-20 17:34:45,647 [INFO] bridge_server: Request from ('10.190.106.180', 45990): type=fastboot id=96f9a605-f3e2-4e0f-a171-79b9c5ae7337
+2026-04-20 17:34:45,647 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:34:45,702 [INFO] bridge_server: Command client ('10.190.106.180', 45990) disconnected
+2026-04-20 17:34:45,702 [INFO] bridge_server: Command client ('10.190.106.180', 45990) disconnected (active=0)
+2026-04-20 17:34:50,709 [INFO] bridge_server: Command client connected: ('10.190.106.180', 46004)
+2026-04-20 17:34:50,709 [INFO] bridge_server: Request from ('10.190.106.180', 46004): type=fastboot id=51161585-4c7c-43df-8bd3-02e1dc596ef7
+2026-04-20 17:34:50,710 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:34:50,757 [INFO] bridge_server: Command client ('10.190.106.180', 46004) disconnected
+2026-04-20 17:34:50,757 [INFO] bridge_server: Command client ('10.190.106.180', 46004) disconnected (active=0)
+2026-04-20 17:34:55,764 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57072)
+2026-04-20 17:34:55,765 [INFO] bridge_server: Request from ('10.190.106.180', 57072): type=fastboot id=a9f733aa-9619-4872-ad4b-27fef520775b
+2026-04-20 17:34:55,765 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:34:55,815 [INFO] bridge_server: Command client ('10.190.106.180', 57072) disconnected
+2026-04-20 17:34:55,816 [INFO] bridge_server: Command client ('10.190.106.180', 57072) disconnected (active=0)
+2026-04-20 17:35:00,821 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57086)
+2026-04-20 17:35:00,821 [INFO] bridge_server: Request from ('10.190.106.180', 57086): type=fastboot id=68a63fbc-2ec3-4cb1-b277-60d291252e2b
+2026-04-20 17:35:00,821 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:35:00,868 [INFO] bridge_server: Command client ('10.190.106.180', 57086) disconnected
+2026-04-20 17:35:00,868 [INFO] bridge_server: Command client ('10.190.106.180', 57086) disconnected (active=0)
+2026-04-20 17:35:05,875 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57020)
+2026-04-20 17:35:05,876 [INFO] bridge_server: Request from ('10.190.106.180', 57020): type=fastboot id=eb45eee7-5fe9-4882-930b-021f2df4e5b8
+2026-04-20 17:35:05,876 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:35:05,923 [INFO] bridge_server: Command client ('10.190.106.180', 57020) disconnected
+2026-04-20 17:35:05,923 [INFO] bridge_server: Command client ('10.190.106.180', 57020) disconnected (active=0)
+2026-04-20 17:35:10,931 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57032)
+2026-04-20 17:35:10,931 [INFO] bridge_server: Request from ('10.190.106.180', 57032): type=fastboot id=27101ad3-c1e7-4c89-8c47-ea5fce491fa2
+2026-04-20 17:35:10,931 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:35:10,980 [INFO] bridge_server: Command client ('10.190.106.180', 57032) disconnected
+2026-04-20 17:35:10,981 [INFO] bridge_server: Command client ('10.190.106.180', 57032) disconnected (active=0)
+2026-04-20 17:35:15,988 [INFO] bridge_server: Command client connected: ('10.190.106.180', 43072)
+2026-04-20 17:35:15,989 [INFO] bridge_server: Request from ('10.190.106.180', 43072): type=fastboot id=a6099903-d139-4b5a-bde0-75fd80cfc798
+2026-04-20 17:35:15,989 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:35:16,042 [INFO] bridge_server: Command client ('10.190.106.180', 43072) disconnected
+2026-04-20 17:35:16,042 [INFO] bridge_server: Command client ('10.190.106.180', 43072) disconnected (active=0)
+2026-04-20 17:35:21,049 [INFO] bridge_server: Command client connected: ('10.190.106.180', 43080)
+2026-04-20 17:35:21,049 [INFO] bridge_server: Request from ('10.190.106.180', 43080): type=fastboot id=f690a2f2-563c-4346-9c5c-f9aba885ba62
+2026-04-20 17:35:21,050 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:35:21,096 [INFO] bridge_server: Command client ('10.190.106.180', 43080) disconnected
+2026-04-20 17:35:21,097 [INFO] bridge_server: Command client ('10.190.106.180', 43080) disconnected (active=0)
+2026-04-20 17:35:26,104 [INFO] bridge_server: Command client connected: ('10.190.106.180', 45538)
+2026-04-20 17:35:26,105 [INFO] bridge_server: Request from ('10.190.106.180', 45538): type=fastboot id=413971f2-b608-49a6-aa9f-bb18bc94697d
+2026-04-20 17:35:26,105 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:35:26,153 [INFO] bridge_server: Command client ('10.190.106.180', 45538) disconnected
+2026-04-20 17:35:26,153 [INFO] bridge_server: Command client ('10.190.106.180', 45538) disconnected (active=0)
+2026-04-20 17:35:26,154 [INFO] bridge_server: Command client connected: ('10.190.106.180', 45552)
+2026-04-20 17:35:26,154 [INFO] bridge_server: Request from ('10.190.106.180', 45552): type=fastboot_boot id=c434da0a-b08e-4933-a6f7-1133ec1531db
+2026-04-20 17:35:26,154 [INFO] bridge.command_handler: Fastboot boot ▶ fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:37:26,189 [WARNING] bridge.command_handler: Command timed out: fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:37:26,190 [INFO] bridge_server: Command client ('10.190.106.180', 45552) disconnected
+2026-04-20 17:37:26,190 [INFO] bridge_server: Command client ('10.190.106.180', 45552) disconnected (active=0)
+2026-04-20 17:40:26,698 [INFO] bridge_server: Serial log client ('10.190.106.180', 53626) disconnected
+2026-04-20 17:40:26,698 [INFO] bridge_server: Serial log client ('10.190.106.180', 53626) cleaned up
+2026-04-20 17:40:55,964 [INFO] bridge_server: Command client connected: ('10.190.106.180', 47480)
+2026-04-20 17:40:55,964 [INFO] bridge_server: Request from ('10.190.106.180', 47480): type=adb id=d8dce8b8-cc6c-4da6-b06a-dd0193789e2c
+2026-04-20 17:40:55,965 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 root
+2026-04-20 17:40:56,902 [INFO] bridge_server: Command client ('10.190.106.180', 47480) disconnected
+2026-04-20 17:40:56,902 [INFO] bridge_server: Command client ('10.190.106.180', 47480) disconnected (active=0)
+2026-04-20 17:40:59,909 [INFO] bridge_server: Command client connected: ('10.190.106.180', 47494)
+2026-04-20 17:40:59,909 [INFO] bridge_server: Request from ('10.190.106.180', 47494): type=adb id=765378b1-6f3d-4918-bc00-333f89653600
+2026-04-20 17:40:59,910 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell id
+2026-04-20 17:41:00,027 [INFO] bridge_server: Request from ('10.190.106.180', 47494): type=adb id=77d485ad-51d5-4f54-b600-d46f4743f3f9
+2026-04-20 17:41:00,027 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot bootloader
+2026-04-20 17:41:00,179 [INFO] bridge_server: Command client ('10.190.106.180', 47494) disconnected
+2026-04-20 17:41:00,179 [INFO] bridge_server: Command client ('10.190.106.180', 47494) disconnected (active=0)
+2026-04-20 17:41:05,185 [INFO] bridge_server: Command client connected: ('10.190.106.180', 33690)
+2026-04-20 17:41:05,186 [INFO] bridge_server: Request from ('10.190.106.180', 33690): type=fastboot id=2318a3e0-8121-4980-be28-9e9b405d6a59
+2026-04-20 17:41:05,186 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:41:05,241 [INFO] bridge_server: Command client ('10.190.106.180', 33690) disconnected
+2026-04-20 17:41:05,242 [INFO] bridge_server: Command client ('10.190.106.180', 33690) disconnected (active=0)
+2026-04-20 17:41:26,556 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 38882)
+2026-04-20 17:41:26,557 [INFO] bridge_server: Serial log client ('10.190.106.180', 38882) subscribed
+2026-04-20 17:41:29,562 [INFO] bridge_server: Command client connected: ('10.190.106.180', 49344)
+2026-04-20 17:41:29,562 [INFO] bridge_server: Request from ('10.190.106.180', 49344): type=adb id=494f9b7e-8370-47be-b6b9-2357bdce9eda
+2026-04-20 17:41:29,563 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 root
+2026-04-20 17:41:29,676 [INFO] bridge_server: Command client ('10.190.106.180', 49344) disconnected
+2026-04-20 17:41:29,677 [INFO] bridge_server: Command client ('10.190.106.180', 49344) disconnected (active=0)
+2026-04-20 17:41:32,682 [INFO] bridge_server: Command client connected: ('10.190.106.180', 56928)
+2026-04-20 17:41:32,682 [INFO] bridge_server: Request from ('10.190.106.180', 56928): type=adb id=fe3fd510-c4fd-45a0-947e-ce16e1f851a4
+2026-04-20 17:41:32,683 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot bootloader
+2026-04-20 17:41:32,788 [INFO] bridge_server: Command client ('10.190.106.180', 56928) disconnected
+2026-04-20 17:41:32,788 [INFO] bridge_server: Command client ('10.190.106.180', 56928) disconnected (active=0)
+2026-04-20 17:41:37,791 [INFO] bridge_server: Command client connected: ('10.190.106.180', 56944)
+2026-04-20 17:41:37,792 [INFO] bridge_server: Request from ('10.190.106.180', 56944): type=fastboot id=877ba828-99af-49c8-b13c-8714a3ce7507
+2026-04-20 17:41:37,792 [INFO] bridge.command_handler: Fastboot ▶ fastboot devices
+2026-04-20 17:41:37,838 [INFO] bridge_server: Command client ('10.190.106.180', 56944) disconnected
+2026-04-20 17:41:37,838 [INFO] bridge_server: Command client ('10.190.106.180', 56944) disconnected (active=0)
+2026-04-20 17:41:37,839 [INFO] bridge_server: Command client connected: ('10.190.106.180', 56956)
+2026-04-20 17:41:37,839 [INFO] bridge_server: Request from ('10.190.106.180', 56956): type=fastboot_boot id=c37b73a7-cd6d-4b37-b5c3-02b016520256
+2026-04-20 17:41:37,839 [INFO] bridge.command_handler: Fastboot boot ▶ fastboot -s 34c70d59 boot \\stellar\nsid-blr-02\LY.AU.0.1.1-62502-gen5meta.1-2\apps_proc\poky\build\tmp-glibc\deploy\images\sa8797-automotive\sa8797-boot.img
+2026-04-20 17:41:38,757 [INFO] bridge_server: Command client ('10.190.106.180', 56956) disconnected
+2026-04-20 17:41:38,758 [INFO] bridge_server: Command client ('10.190.106.180', 56956) disconnected (active=0)
+2026-04-20 17:44:39,371 [INFO] bridge_server: Serial log client ('10.190.106.180', 38882) disconnected
+2026-04-20 17:44:39,371 [INFO] bridge_server: Serial log client ('10.190.106.180', 38882) cleaned up
+2026-04-21 12:57:27,038 [INFO] bridge_server: Command client connected: ('10.190.106.180', 50834)
+2026-04-21 12:57:27,039 [INFO] bridge_server: Request from ('10.190.106.180', 50834): type=ping id=b8fc6a22-0f1e-4d9c-911c-e42f0f56ad51
+2026-04-21 12:57:27,040 [INFO] bridge_server: Command client ('10.190.106.180', 50834) disconnected
+2026-04-21 12:57:27,040 [INFO] bridge_server: Command client ('10.190.106.180', 50834) disconnected (active=0)
+2026-04-21 12:57:27,041 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 43498)
+2026-04-21 12:57:27,041 [INFO] bridge_server: Serial log client ('10.190.106.180', 43498) subscribed
+2026-04-21 12:57:27,041 [INFO] bridge_server: Command client connected: ('10.190.106.180', 50850)
+2026-04-21 12:57:27,042 [INFO] bridge_server: Request from ('10.190.106.180', 50850): type=tac_power_cycle id=183d684d-4afd-4f84-9de4-c2349b74d469
+2026-04-21 12:57:27,173 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-21 12:57:30,376 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-21 12:57:31,385 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-21 12:57:39,578 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-21 12:57:40,587 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-21 12:57:45,590 [INFO] bridge_server: Command client ('10.190.106.180', 50850) disconnected
+2026-04-21 12:57:45,590 [INFO] bridge_server: Command client ('10.190.106.180', 50850) disconnected (active=0)
+2026-04-21 12:59:15,687 [INFO] bridge_server: Serial log client ('10.190.106.180', 43498) disconnected
+2026-04-21 12:59:15,687 [INFO] bridge_server: Serial log client ('10.190.106.180', 43498) cleaned up
+2026-04-21 13:00:18,128 [INFO] bridge_server: Command client connected: ('10.190.106.180', 57700)
+2026-04-21 13:00:18,129 [INFO] bridge_server: Request from ('10.190.106.180', 57700): type=list_devices id=770b2508-72ee-416b-952a-e744c6055552
+2026-04-21 13:00:18,283 [INFO] bridge_server: Request from ('10.190.106.180', 57700): type=adb id=cd3c6bd1-da69-46a5-81fc-d2fd64fb6e2e
+2026-04-21 13:00:18,284 [INFO] bridge.command_handler: ADB ▶ adb shell uname -r
+2026-04-21 13:00:18,388 [INFO] bridge_server: Request from ('10.190.106.180', 57700): type=adb id=80402c1c-00d3-41ea-8804-6594f9ef5683
+2026-04-21 13:00:18,388 [INFO] bridge.command_handler: ADB ▶ adb shell uname -a
+2026-04-21 13:00:18,492 [INFO] bridge_server: Request from ('10.190.106.180', 57700): type=adb id=58a00716-9806-4d50-9dda-ab3de5f41778
+2026-04-21 13:00:18,493 [INFO] bridge.command_handler: ADB ▶ adb shell cat /proc/version
+2026-04-21 13:00:18,597 [INFO] bridge_server: Command client ('10.190.106.180', 57700) disconnected
+2026-04-21 13:00:18,598 [INFO] bridge_server: Command client ('10.190.106.180', 57700) disconnected (active=0)
+2026-04-21 13:00:29,620 [INFO] bridge_server: Command client connected: ('10.190.106.180', 60224)
+2026-04-21 13:00:29,621 [INFO] bridge_server: Request from ('10.190.106.180', 60224): type=adb id=1afe0387-7bb3-49bf-a9ef-88ce3cd5e555
+2026-04-21 13:00:29,621 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell cat /proc/version
+2026-04-21 13:00:29,726 [INFO] bridge_server: Request from ('10.190.106.180', 60224): type=adb id=85f33c2b-433a-4e9c-a298-e4a6db485b23
+2026-04-21 13:00:29,726 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell getprop ro.product.model
+2026-04-21 13:00:29,832 [INFO] bridge_server: Request from ('10.190.106.180', 60224): type=adb id=fb925195-b986-49ef-9fac-0b3df4f4ea46
+2026-04-21 13:00:29,832 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell getprop ro.product.device
+2026-04-21 13:00:29,936 [INFO] bridge_server: Request from ('10.190.106.180', 60224): type=adb id=86de29ec-2059-4e24-920a-4e61218635e4
+2026-04-21 13:00:29,936 [INFO] bridge.command_handler: ADB ▶ adb -s b15fcc25 shell cat /proc/version
+2026-04-21 13:00:30,044 [INFO] bridge_server: Request from ('10.190.106.180', 60224): type=adb id=07d7a403-219d-4b0f-b7bc-6f6428ce192e
+2026-04-21 13:00:30,044 [INFO] bridge.command_handler: ADB ▶ adb -s b15fcc25 shell getprop ro.product.model
+2026-04-21 13:00:30,147 [INFO] bridge_server: Request from ('10.190.106.180', 60224): type=adb id=dc5d730b-c3f8-48c0-ac79-2f281eac55db
+2026-04-21 13:00:30,148 [INFO] bridge.command_handler: ADB ▶ adb -s b15fcc25 shell getprop ro.product.device
+2026-04-21 13:00:30,251 [INFO] bridge_server: Command client ('10.190.106.180', 60224) disconnected
+2026-04-21 13:00:30,252 [INFO] bridge_server: Command client ('10.190.106.180', 60224) disconnected (active=0)
+2026-04-21 15:42:01,085 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-21 15:42:01,085 [INFO] bridge_server: Bridge server shut down

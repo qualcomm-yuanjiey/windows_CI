@@ -1,0 +1,17 @@
+# ============================================================
+# Windows Bridge Server – Python dependencies
+# Install with: pip install -r requirements_windows.txt
+# ============================================================
+
+# YAML config file parsing
+PyYAML>=6.0
+
+# Serial port communication with the embedded device UART
+pyserial>=3.5
+
+# TACDev (Qualcomm Alpaca TAC Python API) is installed separately
+# as part of the Alpaca installation:
+#   Default path: C:\Program Files (x86)\Qualcomm\Alpaca
+# After Alpaca is installed, add its Python site-packages to your PATH or
+# install the wheel manually:
+#   pip install "C:\Program Files (x86)\Qualcomm\Alpaca\python\TACDev-*.whl"

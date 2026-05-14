@@ -1,0 +1,18 @@
+# ============================================================
+# Linux Client – Python dependencies
+# Install with: pip install -r requirements_linux.txt
+# ============================================================
+
+# YAML config file parsing
+PyYAML>=6.0
+
+# LangChain core (for LLM agent tool wrappers in llm_tools.py)
+langchain>=0.2.0
+langchain-core>=0.2.0
+
+# OpenAI LLM backend (swap for another provider if preferred)
+langchain-openai>=0.1.0
+openai>=1.0.0
+
+# Pydantic for tool input schemas
+pydantic>=2.0.0

@@ -1,0 +1,373 @@
+2026-04-17 13:48:03,961 [INFO] bridge_server: Loaded config from C:\Users\pankpati\t3000_\server\config.yaml
+2026-04-17 13:48:03,966 [INFO] bridge.serial_handler: Serial log manager started – port=COM4 baud=115200
+2026-04-17 13:48:03,967 [INFO] bridge_server: ============================================================
+2026-04-17 13:48:03,967 [INFO] bridge_server: Windows Bridge Server started
+2026-04-17 13:48:03,967 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-17 13:48:03,967 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-17 13:48:03,967 [INFO] bridge_server:   Serial UART port  : COM4 @ 115200 baud
+2026-04-17 13:48:03,968 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-17 13:48:03,968 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-17 13:48:03,968 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-17 13:48:03,968 [INFO] bridge_server:   TACDev VTP number : VTP1
+2026-04-17 13:48:03,968 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-17 13:48:03,968 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-17 13:48:03,968 [INFO] bridge_server:   Auth required     : False
+2026-04-17 13:48:03,969 [INFO] bridge_server: ============================================================
+2026-04-17 13:48:03,976 [WARNING] bridge.serial_handler: Serial error: could not open port 'COM4': PermissionError(13, 'Access is denied.', None, 5) – retrying in 3 s
+2026-04-17 13:48:06,977 [WARNING] bridge.serial_handler: Serial error: could not open port 'COM4': PermissionError(13, 'Access is denied.', None, 5) – retrying in 3 s
+2026-04-17 13:48:09,979 [WARNING] bridge.serial_handler: Serial error: could not open port 'COM4': PermissionError(13, 'Access is denied.', None, 5) – retrying in 3 s
+2026-04-17 13:48:12,408 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-17 13:48:12,408 [INFO] bridge_server: Bridge server shut down
+2026-04-17 13:49:11,167 [INFO] bridge_server: Loaded config from C:\Users\pankpati\t3000_\server\config.yaml
+2026-04-17 13:49:11,170 [INFO] bridge.serial_handler: Serial log manager started – port=COM4 baud=115200
+2026-04-17 13:49:11,171 [INFO] bridge_server: ============================================================
+2026-04-17 13:49:11,171 [INFO] bridge_server: Windows Bridge Server started
+2026-04-17 13:49:11,171 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-17 13:49:11,171 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-17 13:49:11,171 [INFO] bridge_server:   Serial UART port  : COM4 @ 115200 baud
+2026-04-17 13:49:11,171 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-17 13:49:11,172 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-17 13:49:11,172 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-17 13:49:11,172 [INFO] bridge_server:   TACDev VTP number : VTP1
+2026-04-17 13:49:11,172 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-17 13:49:11,172 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-17 13:49:11,172 [INFO] bridge_server:   Auth required     : False
+2026-04-17 13:49:11,172 [INFO] bridge_server: ============================================================
+2026-04-17 13:49:11,194 [INFO] bridge.serial_handler: Serial port COM4 opened
+2026-04-17 14:02:51,135 [INFO] bridge_server: Command client connected: ('10.190.106.180', 35072)
+2026-04-17 14:02:51,135 [INFO] bridge_server: Request from ('10.190.106.180', 35072): type=ping id=9b00bec8-35b4-485b-bbc7-2b194c2201d9
+2026-04-17 14:02:51,141 [INFO] bridge_server: Request from ('10.190.106.180', 35072): type=list_devices id=ed15c982-efb7-4aa7-ae22-b17f97f4b1be
+2026-04-17 14:02:51,143 [ERROR] bridge.command_handler: Executable not found: [WinError 2] The system cannot find the file specified
+2026-04-17 14:02:51,144 [ERROR] bridge.command_handler: Executable not found: [WinError 2] The system cannot find the file specified
+2026-04-17 14:02:51,146 [INFO] bridge_server: Request from ('10.190.106.180', 35072): type=adb id=ff4ddf13-95af-451a-ba09-0748c2d919f6
+2026-04-17 14:02:51,146 [INFO] bridge.command_handler: ADB ▶ adb reboot
+2026-04-17 14:02:51,147 [ERROR] bridge.command_handler: Executable not found: [WinError 2] The system cannot find the file specified
+2026-04-17 14:02:51,148 [INFO] bridge_server: Command client ('10.190.106.180', 35072) disconnected
+2026-04-17 14:02:51,148 [INFO] bridge_server: Command client ('10.190.106.180', 35072) disconnected (active=0)
+2026-04-17 14:02:56,161 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 56974)
+2026-04-17 14:02:56,161 [INFO] bridge_server: Serial log client ('10.190.106.180', 56974) subscribed
+2026-04-17 14:04:56,181 [INFO] bridge_server: Serial log client ('10.190.106.180', 56974) disconnected
+2026-04-17 14:04:56,182 [INFO] bridge_server: Serial log client ('10.190.106.180', 56974) cleaned up
+2026-04-17 14:05:36,667 [INFO] bridge_server: Command client connected: ('10.190.106.180', 33098)
+2026-04-17 14:05:36,667 [INFO] bridge_server: Request from ('10.190.106.180', 33098): type=tac_list_devices id=07436848-5e4c-47f8-9998-ede5a02188d9
+2026-04-17 14:05:36,793 [INFO] bridge.tacdev_handler: TAC device list: 1 device(s)
+2026-04-17 14:05:36,794 [INFO] bridge_server: Request from ('10.190.106.180', 33098): type=tac_get_info id=51d885b0-13aa-41e0-b2bf-bef529831351
+2026-04-17 14:05:37,994 [INFO] bridge_server: Request from ('10.190.106.180', 33098): type=tac_power_cycle id=b6489ee9-6c6c-4b63-85d1-24ea92cd3b4d
+2026-04-17 14:05:38,057 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-17 14:05:38,195 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-17 14:05:39,202 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-17 14:05:44,365 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-17 14:05:47,428 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-17 14:05:52,433 [INFO] bridge_server: Command client ('10.190.106.180', 33098) disconnected
+2026-04-17 14:05:52,435 [INFO] bridge_server: Command client ('10.190.106.180', 33098) disconnected (active=0)
+2026-04-17 14:05:57,439 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 46436)
+2026-04-17 14:05:57,441 [INFO] bridge_server: Serial log client ('10.190.106.180', 46436) subscribed
+2026-04-17 14:09:04,316 [INFO] bridge_server: Serial log client ('10.190.106.180', 46436) disconnected
+2026-04-17 14:09:04,317 [INFO] bridge_server: Serial log client ('10.190.106.180', 46436) cleaned up
+2026-04-17 15:41:10,909 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-17 15:41:10,914 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-17 15:41:10,915 [INFO] bridge_server: ============================================================
+2026-04-17 15:41:10,915 [INFO] bridge_server: Windows Bridge Server started
+2026-04-17 15:41:10,916 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-17 15:41:10,916 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-17 15:41:10,916 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-17 15:41:10,916 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-17 15:41:10,916 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-17 15:41:10,916 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-17 15:41:10,916 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-17 15:41:10,917 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-17 15:41:10,917 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-17 15:41:10,917 [INFO] bridge_server:   Auth required     : False
+2026-04-17 15:41:10,917 [INFO] bridge_server: ============================================================
+2026-04-17 15:41:10,938 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-17 15:45:29,261 [INFO] bridge_server: Command client connected: ('10.190.106.180', 37976)
+2026-04-17 15:45:29,262 [INFO] bridge_server: Request from ('10.190.106.180', 37976): type=ping id=813ffb56-39ef-491c-b71f-4de172bf1c72
+2026-04-17 15:45:29,265 [INFO] bridge_server: Request from ('10.190.106.180', 37976): type=tac_get_info id=229d1b48-792b-40a5-87d9-2244cec7eb1f
+2026-04-17 15:45:29,265 [ERROR] bridge.tacdev_handler: TACDev error for 'tac_get_info'
+Traceback (most recent call last):
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 45, in _import_tacdev
+    import TACDev  # noqa: PLC0415
+    ^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'TACDev'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 241, in dispatch
+    return _worker.run(fn, request.get("payload", {}))
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 92, in run
+    raise result_holder[1]
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 83, in _task
+    result_holder[0] = fn(*args, **kwargs)
+                       ~~^^^^^^^^^^^^^^^^^
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 276, in _get_info
+    TACDev = _import_tacdev()
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 48, in _import_tacdev
+    raise ImportError(
+    ...<2 lines>...
+    ) from exc
+ImportError: TACDev Python module not found. Default install path: C:\Program Files (x86)\Qualcomm\Alpaca
+2026-04-17 15:45:29,285 [INFO] bridge_server: Request from ('10.190.106.180', 37976): type=tac_get_status id=4f1d0e89-f958-4167-9585-4c913ab8e46a
+2026-04-17 15:45:29,286 [ERROR] bridge.tacdev_handler: TACDev error for 'tac_get_status'
+Traceback (most recent call last):
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 45, in _import_tacdev
+    import TACDev  # noqa: PLC0415
+    ^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'TACDev'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 241, in dispatch
+    return _worker.run(fn, request.get("payload", {}))
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 92, in run
+    raise result_holder[1]
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 83, in _task
+    result_holder[0] = fn(*args, **kwargs)
+                       ~~^^^^^^^^^^^^^^^^^
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 289, in _get_status
+    return self._get_info(payload)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 276, in _get_info
+    TACDev = _import_tacdev()
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 48, in _import_tacdev
+    raise ImportError(
+    ...<2 lines>...
+    ) from exc
+ImportError: TACDev Python module not found. Default install path: C:\Program Files (x86)\Qualcomm\Alpaca
+2026-04-17 15:45:29,290 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 58524)
+2026-04-17 15:45:29,290 [INFO] bridge_server: Serial log client ('10.190.106.180', 58524) subscribed
+2026-04-17 15:45:30,290 [INFO] bridge_server: Request from ('10.190.106.180', 37976): type=tac_power_cycle id=5ff931b8-1663-41c0-beee-5de37a364d83
+2026-04-17 15:45:30,291 [ERROR] bridge.tacdev_handler: TACDev error for 'tac_power_cycle'
+Traceback (most recent call last):
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 45, in _import_tacdev
+    import TACDev  # noqa: PLC0415
+    ^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'TACDev'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 241, in dispatch
+    return _worker.run(fn, request.get("payload", {}))
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 92, in run
+    raise result_holder[1]
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 83, in _task
+    result_holder[0] = fn(*args, **kwargs)
+                       ~~^^^^^^^^^^^^^^^^^
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 315, in _power_cycle
+    TACDev = _import_tacdev()
+  File "C:\Dropbox\ninad\t3000_\server\tacdev_handler.py", line 48, in _import_tacdev
+    raise ImportError(
+    ...<2 lines>...
+    ) from exc
+ImportError: TACDev Python module not found. Default install path: C:\Program Files (x86)\Qualcomm\Alpaca
+2026-04-17 15:46:28,925 [INFO] bridge_server: Command client ('10.190.106.180', 37976) disconnected
+2026-04-17 15:46:28,926 [INFO] bridge_server: Command client ('10.190.106.180', 37976) disconnected (active=0)
+2026-04-17 15:46:28,926 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-17 15:46:28,926 [INFO] bridge_server: Bridge server shut down
+2026-04-17 15:57:00,453 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-17 15:57:00,459 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-17 15:57:00,460 [INFO] bridge_server: ============================================================
+2026-04-17 15:57:00,460 [INFO] bridge_server: Windows Bridge Server started
+2026-04-17 15:57:00,460 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-17 15:57:00,461 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-17 15:57:00,461 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-17 15:57:00,461 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-17 15:57:00,461 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-17 15:57:00,461 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-17 15:57:00,461 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-17 15:57:00,462 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-17 15:57:00,462 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-17 15:57:00,462 [INFO] bridge_server:   Auth required     : False
+2026-04-17 15:57:00,462 [INFO] bridge_server: ============================================================
+2026-04-17 15:57:00,490 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-17 15:58:22,766 [INFO] bridge_server: Command client connected: ('10.190.106.180', 40798)
+2026-04-17 15:58:22,767 [INFO] bridge_server: Request from ('10.190.106.180', 40798): type=ping id=021c6a87-a9d1-4c25-bc89-6685a94a6dbe
+2026-04-17 15:58:22,770 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 50600)
+2026-04-17 15:58:22,771 [INFO] bridge_server: Serial log client ('10.190.106.180', 50600) subscribed
+2026-04-17 15:58:23,772 [INFO] bridge_server: Request from ('10.190.106.180', 40798): type=tac_power_cycle id=91960309-9d1c-4331-a563-1d1b724d3440
+2026-04-17 15:58:23,987 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-17 15:58:27,173 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-17 15:58:28,176 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-17 15:58:36,370 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-17 15:58:37,381 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-17 16:00:22,789 [INFO] bridge_server: Command client ('10.190.106.180', 40798) disconnected
+2026-04-17 16:00:22,790 [INFO] bridge_server: Command client ('10.190.106.180', 40798) disconnected (active=0)
+2026-04-17 16:01:40,471 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-17 16:01:40,471 [INFO] bridge_server: Bridge server shut down
+2026-04-17 16:01:41,439 [INFO] bridge_server: Serial log client ('10.190.106.180', 50600) cleaned up
+2026-04-17 16:01:41,441 [INFO] bridge_server: Interrupted by user
+2026-04-17 16:04:41,852 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-17 16:04:41,857 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-17 16:04:41,858 [INFO] bridge_server: ============================================================
+2026-04-17 16:04:41,858 [INFO] bridge_server: Windows Bridge Server started
+2026-04-17 16:04:41,858 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-17 16:04:41,859 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-17 16:04:41,859 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-17 16:04:41,859 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-17 16:04:41,859 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-17 16:04:41,859 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-17 16:04:41,859 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-17 16:04:41,860 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-17 16:04:41,860 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-17 16:04:41,860 [INFO] bridge_server:   Auth required     : False
+2026-04-17 16:04:41,860 [INFO] bridge_server: ============================================================
+2026-04-17 16:04:41,887 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-17 16:04:54,431 [INFO] bridge_server: Command client connected: ('10.190.106.180', 43010)
+2026-04-17 16:04:54,432 [INFO] bridge_server: Request from ('10.190.106.180', 43010): type=ping id=88660748-09d6-434f-8644-3f971fa4d67e
+2026-04-17 16:04:54,435 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 41762)
+2026-04-17 16:04:54,436 [INFO] bridge_server: Serial log client ('10.190.106.180', 41762) subscribed
+2026-04-17 16:04:56,439 [INFO] bridge_server: Request from ('10.190.106.180', 43010): type=tac_power_cycle id=f2da7d4f-b096-4b75-b176-1b31f4b2f3a4
+2026-04-17 16:04:56,659 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-17 16:04:59,853 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-17 16:05:00,861 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-17 16:05:09,054 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-17 16:05:10,061 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-17 16:08:15,820 [INFO] bridge_server: Command client ('10.190.106.180', 43010) disconnected
+2026-04-17 16:08:15,820 [INFO] bridge_server: Command client ('10.190.106.180', 43010) disconnected (active=0)
+2026-04-17 16:08:15,832 [INFO] bridge_server: Serial log client ('10.190.106.180', 41762) disconnected
+2026-04-17 16:08:15,833 [INFO] bridge_server: Serial log client ('10.190.106.180', 41762) cleaned up
+2026-04-17 16:11:29,418 [INFO] bridge_server: Command client connected: ('10.190.106.180', 53012)
+2026-04-17 16:11:29,418 [INFO] bridge_server: Request from ('10.190.106.180', 53012): type=tac_boot_fastboot id=401e6c19-129e-4f85-941f-8b581b4a44bf
+2026-04-17 16:11:29,509 [INFO] bridge.tacdev_handler: TAC boot to Fastboot – device 0 (sleep 5.0 s after)
+2026-04-17 16:11:33,711 [INFO] bridge.tacdev_handler: BootToFastBootButton() done – sleeping 5.0 s
+2026-04-17 16:11:38,713 [INFO] bridge_server: Command client ('10.190.106.180', 53012) disconnected
+2026-04-17 16:11:38,714 [INFO] bridge_server: Command client ('10.190.106.180', 53012) disconnected (active=0)
+2026-04-17 16:12:22,898 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-17 16:12:22,898 [INFO] bridge_server: Bridge server shut down
+2026-04-17 16:12:47,853 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-17 16:12:47,857 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-17 16:12:47,859 [INFO] bridge_server: ============================================================
+2026-04-17 16:12:47,859 [INFO] bridge_server: Windows Bridge Server started
+2026-04-17 16:12:47,859 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-17 16:12:47,859 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-17 16:12:47,859 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-17 16:12:47,859 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-17 16:12:47,859 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-17 16:12:47,860 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-17 16:12:47,860 [INFO] bridge_server:   TACDev VTP number : (not set – using device index)
+2026-04-17 16:12:47,860 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-17 16:12:47,860 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-17 16:12:47,860 [INFO] bridge_server:   Auth required     : False
+2026-04-17 16:12:47,860 [INFO] bridge_server: ============================================================
+2026-04-17 16:12:47,886 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-17 16:13:10,858 [INFO] bridge_server: Command client connected: ('10.190.106.180', 60430)
+2026-04-17 16:13:10,859 [INFO] bridge_server: Request from ('10.190.106.180', 60430): type=tac_boot_fastboot id=ffbe1e41-1df7-43db-b2be-d8deb894827a
+2026-04-17 16:13:10,988 [INFO] bridge.tacdev_handler: TAC boot to Fastboot – device 0 (sleep 5.0 s after)
+2026-04-17 16:13:15,195 [INFO] bridge.tacdev_handler: BootToFastBootButton() done – sleeping 5.0 s
+2026-04-17 16:13:20,197 [INFO] bridge_server: Command client ('10.190.106.180', 60430) disconnected
+2026-04-17 16:13:20,197 [INFO] bridge_server: Command client ('10.190.106.180', 60430) disconnected (active=0)
+2026-04-17 16:14:51,305 [INFO] bridge_server: Command client connected: ('10.190.106.180', 45462)
+2026-04-17 16:14:51,306 [INFO] bridge_server: Request from ('10.190.106.180', 45462): type=list_devices id=a1416b54-7631-4639-b2fc-8f4371939bc0
+2026-04-17 16:14:51,459 [INFO] bridge_server: Request from ('10.190.106.180', 45462): type=adb id=8f439f11-ca37-45bc-bee1-7edd0f70fd99
+2026-04-17 16:14:51,459 [INFO] bridge.command_handler: ADB ▶ adb reboot bootloader
+2026-04-17 16:14:51,564 [INFO] bridge_server: Command client ('10.190.106.180', 45462) disconnected
+2026-04-17 16:14:51,565 [INFO] bridge_server: Command client ('10.190.106.180', 45462) disconnected (active=0)
+2026-04-17 16:15:29,289 [INFO] bridge_server: Command client connected: ('10.190.106.180', 40564)
+2026-04-17 16:15:29,290 [INFO] bridge_server: Request from ('10.190.106.180', 40564): type=adb id=edd05619-d09d-4451-be91-4881646bb484
+2026-04-17 16:15:29,290 [INFO] bridge.command_handler: ADB ▶ adb -s b15fcc25 reboot bootloader
+2026-04-17 16:15:31,766 [INFO] bridge_server: Command client ('10.190.106.180', 40564) disconnected
+2026-04-17 16:15:31,766 [INFO] bridge_server: Command client ('10.190.106.180', 40564) disconnected (active=0)
+2026-04-17 16:16:26,450 [INFO] bridge_server: Command client connected: ('10.190.106.180', 56950)
+2026-04-17 16:16:26,450 [INFO] bridge_server: Request from ('10.190.106.180', 56950): type=adb id=e6bee323-3e86-4bc3-85cf-8165078d0610
+2026-04-17 16:16:26,450 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 reboot bootloader
+2026-04-17 16:16:56,502 [WARNING] bridge.command_handler: Command timed out: adb -s 34c70d59 reboot bootloader
+2026-04-17 16:16:56,503 [INFO] bridge_server: Command client ('10.190.106.180', 56950) disconnected
+2026-04-17 16:16:56,503 [INFO] bridge_server: Command client ('10.190.106.180', 56950) disconnected (active=0)
+2026-04-17 17:38:47,043 [INFO] bridge_server: Command client connected: ('10.190.106.180', 51714)
+2026-04-17 17:38:47,043 [INFO] bridge_server: Request from ('10.190.106.180', 51714): type=ping id=30b8c5b4-7b19-4d22-848b-49db414f0f7b
+2026-04-17 17:38:47,045 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 56792)
+2026-04-17 17:38:47,045 [INFO] bridge_server: Serial log client ('10.190.106.180', 56792) subscribed
+2026-04-17 17:38:49,048 [INFO] bridge_server: Request from ('10.190.106.180', 51714): type=tac_power_cycle id=c5147c6b-b33c-480e-a6b4-168a8c197e87
+2026-04-17 17:38:49,049 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-17 17:38:52,283 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-17 17:38:53,293 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-17 17:39:01,497 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-17 17:39:02,508 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-17 17:43:07,877 [INFO] bridge_server: Command client ('10.190.106.180', 51714) disconnected
+2026-04-17 17:43:07,877 [INFO] bridge_server: Command client ('10.190.106.180', 51714) disconnected (active=0)
+2026-04-17 17:43:07,889 [INFO] bridge_server: Serial log client ('10.190.106.180', 56792) disconnected
+2026-04-17 17:43:07,889 [INFO] bridge_server: Serial log client ('10.190.106.180', 56792) cleaned up
+2026-04-17 17:44:41,304 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-17 17:44:41,304 [INFO] bridge_server: Bridge server shut down
+2026-04-20 15:48:09,756 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-20 15:48:09,784 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-20 15:48:09,786 [INFO] bridge_server: ============================================================
+2026-04-20 15:48:09,786 [INFO] bridge_server: Windows Bridge Server started
+2026-04-20 15:48:09,786 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-20 15:48:09,786 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-20 15:48:09,786 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-20 15:48:09,786 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-20 15:48:09,786 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-20 15:48:09,787 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-20 15:48:09,787 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-20 15:48:09,787 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-20 15:48:09,787 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-20 15:48:09,787 [INFO] bridge_server:   Auth required     : False
+2026-04-20 15:48:09,787 [INFO] bridge_server: ============================================================
+2026-04-20 15:48:09,821 [INFO] bridge.serial_handler: Serial port COM15 opened
+2026-04-20 15:50:07,467 [INFO] bridge_server: Command client connected: ('10.190.106.180', 47406)
+2026-04-20 15:50:07,468 [INFO] bridge_server: Request from ('10.190.106.180', 47406): type=ping id=8052e122-fb38-48fb-a9ec-6ce92732af90
+2026-04-20 15:50:07,472 [INFO] bridge_server: Request from ('10.190.106.180', 47406): type=tac_power_cycle id=b899ebd4-3959-4c1c-b86a-3e03b3c12f0a
+2026-04-20 15:50:07,698 [INFO] bridge.tacdev_handler: TAC power CYCLE – device 0 (sleep 5.0 s after each step)
+2026-04-20 15:50:10,890 [INFO] bridge.tacdev_handler: PowerOffButton() ...
+2026-04-20 15:50:11,898 [INFO] bridge.tacdev_handler: Powered off – sleeping 5.0 s
+2026-04-20 15:50:20,090 [INFO] bridge.tacdev_handler: PowerOnButton() ...
+2026-04-20 15:50:21,099 [INFO] bridge.tacdev_handler: Powered on – sleeping 5.0 s
+2026-04-20 15:50:26,101 [INFO] bridge_server: Command client ('10.190.106.180', 47406) disconnected
+2026-04-20 15:50:26,101 [INFO] bridge_server: Command client ('10.190.106.180', 47406) disconnected (active=0)
+2026-04-20 15:50:26,102 [INFO] bridge_server: Serial log client connected: ('10.190.106.180', 59578)
+2026-04-20 15:50:26,102 [INFO] bridge_server: Serial log client ('10.190.106.180', 59578) subscribed
+2026-04-20 15:51:56,507 [INFO] bridge_server: Serial log client ('10.190.106.180', 59578) disconnected
+2026-04-20 15:51:56,507 [INFO] bridge_server: Serial log client ('10.190.106.180', 59578) cleaned up
+2026-04-20 15:53:26,263 [INFO] bridge_server: Command client connected: ('10.190.106.180', 36662)
+2026-04-20 15:53:26,263 [INFO] bridge_server: Request from ('10.190.106.180', 36662): type=adb id=d5ec59b8-b7b2-412f-a0dd-dbed162e8e3a
+2026-04-20 15:53:26,263 [INFO] bridge.command_handler: ADB ▶ adb shell cat /proc/version
+2026-04-20 15:53:31,456 [INFO] bridge_server: Request from ('10.190.106.180', 36662): type=adb id=48942b0e-d4c7-499f-ac55-37ef0eeb021d
+2026-04-20 15:53:31,456 [INFO] bridge.command_handler: ADB ▶ adb shell uname -r
+2026-04-20 15:53:31,561 [INFO] bridge_server: Request from ('10.190.106.180', 36662): type=adb id=80e8cc7f-9eca-4d23-844e-d69d29f99106
+2026-04-20 15:53:31,561 [INFO] bridge.command_handler: ADB ▶ adb shell uname -a
+2026-04-20 15:53:31,665 [INFO] bridge_server: Command client ('10.190.106.180', 36662) disconnected
+2026-04-20 15:53:31,665 [INFO] bridge_server: Command client ('10.190.106.180', 36662) disconnected (active=0)
+2026-04-20 15:53:38,820 [INFO] bridge_server: Command client connected: ('10.190.106.180', 58748)
+2026-04-20 15:53:38,821 [INFO] bridge_server: Request from ('10.190.106.180', 58748): type=list_devices id=874b777c-6568-4d4b-a4c1-8cf60fc475c1
+2026-04-20 15:53:38,978 [INFO] bridge_server: Command client ('10.190.106.180', 58748) disconnected
+2026-04-20 15:53:38,978 [INFO] bridge_server: Command client ('10.190.106.180', 58748) disconnected (active=0)
+2026-04-20 15:53:46,831 [INFO] bridge_server: Command client connected: ('10.190.106.180', 36974)
+2026-04-20 15:53:46,831 [INFO] bridge_server: Request from ('10.190.106.180', 36974): type=adb id=6d33565d-73e4-484d-ac7a-633a457b7bdb
+2026-04-20 15:53:46,831 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell cat /proc/version
+2026-04-20 15:53:46,936 [INFO] bridge_server: Request from ('10.190.106.180', 36974): type=adb id=48c7f92f-a367-4390-b7f4-0c8913c167b6
+2026-04-20 15:53:46,936 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell uname -a
+2026-04-20 15:53:47,040 [INFO] bridge_server: Request from ('10.190.106.180', 36974): type=adb id=92f1358b-d612-4f48-8898-93f8932ad5de
+2026-04-20 15:53:47,041 [INFO] bridge.command_handler: ADB ▶ adb -s b15fcc25 shell cat /proc/version
+2026-04-20 15:53:47,155 [INFO] bridge_server: Request from ('10.190.106.180', 36974): type=adb id=c5212246-b8e1-41df-ad10-227b2da320ea
+2026-04-20 15:53:47,156 [INFO] bridge.command_handler: ADB ▶ adb -s b15fcc25 shell uname -a
+2026-04-20 15:53:47,265 [INFO] bridge_server: Command client ('10.190.106.180', 36974) disconnected
+2026-04-20 15:53:47,265 [INFO] bridge_server: Command client ('10.190.106.180', 36974) disconnected (active=0)
+2026-04-20 15:56:05,035 [INFO] bridge_server: Command client connected: ('10.190.106.180', 36958)
+2026-04-20 15:56:05,036 [INFO] bridge_server: Request from ('10.190.106.180', 36958): type=adb id=f4174484-3939-4b09-9dbc-5a497040e244
+2026-04-20 15:56:05,036 [INFO] bridge.command_handler: ADB ▶ adb -s 34c70d59 shell cat /proc/cmdline
+2026-04-20 15:56:05,140 [INFO] bridge_server: Command client ('10.190.106.180', 36958) disconnected
+2026-04-20 15:56:05,140 [INFO] bridge_server: Command client ('10.190.106.180', 36958) disconnected (active=0)
+2026-04-20 15:56:27,135 [INFO] bridge.serial_handler: Serial log manager stopped
+2026-04-20 15:56:27,135 [INFO] bridge_server: Bridge server shut down
+2026-04-21 15:42:19,026 [INFO] bridge_server: Loaded config from C:\Dropbox\ninad\t3000_\server\config.yaml
+2026-04-21 15:42:19,032 [INFO] bridge.serial_handler: Serial log manager started – port=COM15 baud=115200
+2026-04-21 15:42:19,033 [INFO] bridge_server: ============================================================
+2026-04-21 15:42:19,033 [INFO] bridge_server: Windows Bridge Server started
+2026-04-21 15:42:19,033 [INFO] bridge_server:   Command port      : 0.0.0.0:9000
+2026-04-21 15:42:19,033 [INFO] bridge_server:   Serial log port   : 0.0.0.0:9001
+2026-04-21 15:42:19,033 [INFO] bridge_server:   Serial UART port  : COM15 @ 115200 baud
+2026-04-21 15:42:19,034 [INFO] bridge_server:   ADB device serial : (any)
+2026-04-21 15:42:19,034 [INFO] bridge_server:   Fastboot serial   : (any)
+2026-04-21 15:42:19,034 [INFO] bridge_server:   TACDev enabled    : True
+2026-04-21 15:42:19,034 [INFO] bridge_server:   TACDev VTP number : COM3
+2026-04-21 15:42:19,034 [INFO] bridge_server:   TACDev device #   : 0
+2026-04-21 15:42:19,034 [INFO] bridge_server:   TACDev sleep      : 5 s
+2026-04-21 15:42:19,034 [INFO] bridge_server:   Auth required     : False
+2026-04-21 15:42:19,035 [INFO] bridge_server: ============================================================
+2026-04-21 15:42:19,062 [INFO] bridge.serial_handler: Serial port COM15 opened

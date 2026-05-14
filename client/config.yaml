@@ -1,0 +1,20 @@
+# ============================================================
+# Linux Client – Configuration
+# Copy this file to the Linux machine along with the client/ folder.
+# Edit bridge.host to point to the Windows machine's IP address.
+# ============================================================
+
+bridge:
+  host: "WINDOWS_MACHINE_IP"  # ← CHANGE THIS to the Windows machine's IP address
+                               #   e.g. "192.168.1.100"
+  command_port: 9000           # Must match server command_port
+  serial_log_port: 9001        # Must match server serial_log_port
+  auth_token: ""               # Must match server auth_token (empty = no auth)
+  connect_timeout: 10          # Seconds to wait when connecting
+  recv_timeout: 120            # Seconds to wait for a command response
+                               # (TACDev power-cycle blocks ~10 s on the server)
+  auto_reconnect: true         # Reconnect automatically on connection loss
+
+serial_log:
+  default_save_dir: "/tmp/serial_logs"   # Default directory for captured serial logs
+  default_duration: 60                   # Default capture duration in seconds
