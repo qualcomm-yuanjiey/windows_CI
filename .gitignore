@@ -1,0 +1,16 @@
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Logs
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db

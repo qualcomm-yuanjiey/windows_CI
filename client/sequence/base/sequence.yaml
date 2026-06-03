@@ -1,0 +1,91 @@
+# ============================================================
+# Sequence Configuration
+# ============================================================
+# Each step has:
+#   id      – unique step name (shown in logs)
+#   action  – one of the supported actions (see list below)
+#   params  – action-specific parameters (all optional unless noted)
+#   on_fail – what to do if this step fails: "abort" (default) | "continue"
+#
+# Supported actions
+# -----------------
+#   read_uart        – start capturing serial log in background
+#   stop_uart        – stop serial capture and save to file
+#   power_off        – TAC power off the board
+#   power_on         – TAC power on the board
+#   power_cycle      – TAC power cycle (off -> sleep -> on)
+#   boot_edl         – TAC boot to EDL mode
+#   boot_fastboot    – TAC boot to Fastboot mode
+#   boot_normal      – TAC boot to Normal (Android) mode
+#   boot_recovery    – TAC boot to Recovery mode
+#   fastboot         – run a fastboot command on the Windows host
+#   fastboot_boot    – fastboot boot <image> (no flash, temporary)
+#   adb              – run an ADB command
+#   adb_push         – push a file from Windows host to device
+#   adb_pull         – pull a file from device to Windows host
+#   windows_shell    – run a command on the Windows host (cmd.exe)
+#   linux_shell      – run a command locally on the Linux client (/bin/bash)
+#   wait             – sleep for a fixed number of seconds
+#   ping             – health-check the bridge server
+#
+# windows_shell / linux_shell extra params
+# ------------------
+#   success_patterns    – list of strings; if ANY found in stdout or stderr
+#                         the step is treated as OK regardless of returncode.
+#                         Use this for tools like emmcdl that print warnings
+#                         to stderr and may exit non-zero even on success.
+#   allowed_returncodes – list of int returncodes treated as OK (e.g. [0, 1])
+#   ignore_stderr       – bool; if true, step always succeeds regardless of
+#                         returncode (stderr output is logged but not checked).
+#                         Use for tools like emmcdl that exit non-zero due to
+#                         stderr warnings even when the operation succeeded.
+# ============================================================
+
+sequence:
+
+  - id: read_uart
+    action: read_uart
+    params:
+      output: "/tmp/serial_logs/flash_session.log"   # save path on Linux machine
+
+  - id: compile_repo
+    action: linux_shell
+    params:
+      command: "cd /local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/upstream_linux-next/linux-sheepdog && \
+       python3 sheepdog-slave.py --repo-config template-slave-qli.ini --local=/local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/github/qli-mainline/kernel \
+       --compile-config qli-config --board-config talos_config.yaml --build_only"
+      timeout: 3600
+    on_fail: abort
+
+  - id: power_off
+    action: power_off
+    params:
+      sleep: 5                                        # seconds to wait after power off
+
+  - id: boot_edl
+    action: boot_edl
+    params:
+      sleep: 15                                       # wait for COM port to fully enumerate in EDL mode
+
+  - id: flash_image
+    action: windows_shell
+    params:
+      command: "talos_shell246.bat"
+      timeout: 180
+      #ignore_stderr: true
+    on_fail: abort
+
+  - id: power_on
+    action: power_on
+    params:
+      sleep: 10                                       # give the board time to boot
+
+  - id: record_log
+    action: stop_uart
+    params:
+      duration: 60                                    # total seconds to capture from boot
+
+  - id: power_off
+    action: power_off
+    params:
+      sleep: 5                                        # seconds to wait after power off

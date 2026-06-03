@@ -110,6 +110,16 @@ class BridgeClient:
 
         log.info("Connected to bridge server at %s:%d", self.host, self.command_port)
 
+    def set_recv_timeout(self, timeout: float) -> None:
+        """Adjust the socket receive timeout on an already-connected socket.
+
+        Call this before sending a command that may take longer than the
+        default recv_timeout (e.g. a long-running shell script).
+        """
+        self.recv_timeout = timeout
+        if self._sock:
+            self._sock.settimeout(timeout)
+
     def disconnect(self):
         """Close the TCP connection."""
         if self._fh:

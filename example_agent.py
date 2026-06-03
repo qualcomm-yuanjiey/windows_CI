@@ -229,6 +229,128 @@ def run_agent_demo(host: str, task: str):
         client.disconnect()
 
 
+
+# ---------------------------------------------------------------------------
+# TACDev debug (power on / off / cycle / status / list)
+# ---------------------------------------------------------------------------
+
+def run_tac_debug(host: str, action: str, shell_script: str = ""):
+    """
+    Debug branch for TACDev power control.
+
+    Supported actions
+    -----------------
+    on      – power on  the board  (PowerOnButton)
+    off     – power off the board  (PowerOffButton)
+    cycle   – power cycle          (off -> sleep -> on)
+    status  – print device info + runtime status
+    list    – list all TAC devices visible to the Windows machine
+    edl      – boot to EDL (Emergency Download) mode
+    fastboot – boot to Fastboot mode
+    normal   – boot to Normal (Android) mode
+    recovery – boot to Recovery mode
+    shell    – run a shell script / command on the Windows host (use with --shell-script)
+    """
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "client"))
+    from linux_client import BridgeClient, BridgeClientError
+
+    valid_actions = ("on", "off", "cycle", "status", "list",
+                     "edl", "fastboot", "normal", "recovery", "shell")
+    if action not in valid_actions:
+        print(f"[ERROR] Unknown tac-action \'{action}\'. Choose from: {', '.join(valid_actions)}")
+        sys.exit(1)
+
+    print("\n" + "=" * 60)
+    print(f"  TACDev Debug – action: {action}")
+    print("=" * 60)
+
+    try:
+        # For the shell action the script may run up to 300 s; give the
+        # socket an extra 60 s buffer so it does not time out mid-run.
+        recv_timeout = 360 if action == "shell" else 120
+        with BridgeClient(host=host, command_port=COMMAND_PORT,
+                          auth_token=AUTH_TOKEN,
+                          recv_timeout=recv_timeout) as client:
+
+            if action == "list":
+                print("\n[TAC] Listing all TAC devices …")
+                result = client.tac_list_devices()
+                print(result.get("stdout", ""))
+
+            elif action == "status":
+                print("\n[TAC] Getting device info …")
+                info = client.tac_get_info()
+                print(info.get("stdout", ""))
+                print("\n[TAC] Getting runtime status …")
+                status = client.tac_get_status()
+                print(status.get("stdout", ""))
+
+            elif action == "on":
+                print("\n[TAC] Powering ON the board …")
+                result = client.tac_power_on()
+                print(result.get("stdout", ""))
+                print(f"status: {result['status']}")
+
+            elif action == "off":
+                print("\n[TAC] Powering OFF the board …")
+                result = client.tac_power_off()
+                print(result.get("stdout", ""))
+                print(f"status: {result['status']}")
+
+            elif action == "cycle":
+                print("\n[TAC] Power cycling the board (off -> sleep -> on) …")
+                result = client.tac_power_cycle()
+                print(result.get("stdout", ""))
+                print(f"status: {result['status']}")
+
+            elif action == "edl":
+                print("\n[TAC] Booting to EDL mode …")
+                result = client.tac_boot_edl()
+                print(result.get("stdout", ""))
+                print(f"status: {result['status']}")
+
+            elif action == "fastboot":
+                print("\n[TAC] Booting to Fastboot mode …")
+                result = client.tac_boot_fastboot()
+                print(result.get("stdout", ""))
+                print(f"status: {result['status']}")
+
+            elif action == "normal":
+                print("\n[TAC] Booting to Normal mode …")
+                result = client.tac_boot_normal()
+                print(result.get("stdout", ""))
+                print(f"status: {result['status']}")
+
+            elif action == "recovery":
+                print("\n[TAC] Booting to Recovery mode …")
+                result = client.tac_boot_recovery()
+                print(result.get("stdout", ""))
+                print(f"status: {result['status']}")
+
+            elif action == "shell":
+                if not shell_script:
+                    print("[ERROR] --shell-script is required for action 'shell'")
+                    sys.exit(1)
+                print(f"\n[SHELL] Running on Windows host: {shell_script} …")
+                result = client.shell(shell_script, timeout=300)
+                stdout = result.get("stdout", "").strip()
+                stderr = result.get("stderr", "").strip()
+                if stdout:
+                    print(stdout)
+                if stderr:
+                    print(f"[stderr]\n{stderr}")
+                print(f"status: {result['status']}  returncode: {result.get('returncode', '?')}")
+
+    except BridgeClientError as exc:
+        print(f"\n[ERROR] {exc}")
+        print("  Make sure the Windows bridge server is running.")
+        sys.exit(1)
+
+    print("\n" + "=" * 60)
+    print("  TACDev debug done.")
+    print("=" * 60 + "\n")
+
+
 # ---------------------------------------------------------------------------
 # Serial log monitor (standalone, no LLM)
 # ---------------------------------------------------------------------------
@@ -265,6 +387,102 @@ def run_serial_monitor(host: str):
 # Entry point
 # ---------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------
+# Cycle + serial log capture
+# ---------------------------------------------------------------------------
+
+def run_cycle_and_log(host: str, duration: float, output: str):
+    """
+    1. Subscribe to the serial log stream BEFORE power cycle so no boot
+       output is missed.
+    2. Power cycle the board via TACDev.
+    3. Capture serial logs for ``duration`` seconds (or until Ctrl+C).
+    4. Save the log to ``output`` on this machine.
+    """
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "client"))
+    from linux_client import BridgeClient, BridgeClientError
+    from serial_log_receiver import SerialLogReceiver
+    import threading
+
+    print("\n" + "=" * 60)
+    print("  Cycle + Serial Log Capture")
+    print(f"  host     : {host}")
+    print(f"  duration : {duration}s")
+    print(f"  output   : {output}")
+    print("=" * 60)
+
+    # ── Step 1: start serial capture in background BEFORE power cycle ──
+    lines = []
+    stop_event = threading.Event()
+
+    def _capture():
+        rx = SerialLogReceiver(
+            host=host,
+            serial_log_port=SERIAL_LOG_PORT,
+            auth_token=AUTH_TOKEN,
+            recv_timeout=duration,
+        )
+        rx.connect()
+        log.info("Serial capture connected – waiting for boot output …")
+        try:
+            for entry in rx:
+                if stop_event.is_set():
+                    break
+                entry_type = entry.get("type", "")
+                ts         = entry.get("timestamp", "")
+                if entry_type == "serial_data":
+                    line = entry.get("data", "")
+                    lines.append(f"[{ts}] {line}")
+                    print(f"  {line}")
+                elif entry_type in ("serial_error", "serial_status"):
+                    msg = entry.get("message", "")
+                    lines.append(f"[{ts}] *** {entry_type.upper()}: {msg} ***")
+                    print(f"  *** {entry_type.upper()}: {msg} ***")
+        finally:
+            rx.disconnect()
+
+    capture_thread = threading.Thread(target=_capture, daemon=True, name="serial-capture")
+    capture_thread.start()
+    import time as _time
+    _time.sleep(1.0)   # let capture thread connect before power cycle
+
+    # ── Step 2: power cycle ────────────────────────────────────────────
+    print("\n[TAC] Power cycling the board …")
+    try:
+        with BridgeClient(host=host, command_port=COMMAND_PORT, auth_token=AUTH_TOKEN) as client:
+            result = client.tac_power_cycle()
+            if result.get("status") != "ok":
+                print(f"[ERROR] Power cycle failed: {result.get('stderr', '')}")
+                stop_event.set()
+                return
+            print(f"[TAC] {result.get('stdout', '').strip()}")
+    except BridgeClientError as exc:
+        print(f"[ERROR] {exc}")
+        stop_event.set()
+        return
+
+    # ── Step 3: wait for capture duration ─────────────────────────────
+    print(f"\n[LOG] Capturing for {duration}s … (Ctrl+C to stop early)\n")
+    try:
+        capture_thread.join(timeout=duration)
+    except KeyboardInterrupt:
+        print("\n[LOG] Interrupted by user.")
+    finally:
+        stop_event.set()
+        capture_thread.join(timeout=5)
+
+    # ── Step 4: save log ───────────────────────────────────────────────
+    import os as _os
+    _os.makedirs(_os.path.dirname(_os.path.abspath(output)), exist_ok=True)
+    with open(output, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines) + "\n")
+
+    print("\n" + "=" * 60)
+    print(f"  Lines captured : {len(lines)}")
+    print(f"  Log saved to   : {output}")
+    print("=" * 60 + "\n")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Example usage of the Windows Bridge automation framework"
@@ -276,12 +494,14 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--mode",
-        choices=["demo", "agent", "monitor"],
+        choices=["demo", "agent", "monitor", "debug", "cycle-log"],
         default="demo",
         help=(
             "demo    – standalone connectivity demo (no LLM required)\n"
             "agent   – run a LangChain LLM agent (requires OPENAI_API_KEY)\n"
-            "monitor – stream serial logs to stdout"
+            "monitor – stream serial logs to stdout\n"
+            "debug     – TACDev power control (use with --tac-action)\n"
+            "cycle-log – power cycle then capture serial log (use with --log-duration / --log-output)"
         ),
     )
     parser.add_argument(
@@ -293,6 +513,40 @@ if __name__ == "__main__":
         ),
         help="Task description for the LLM agent (used with --mode agent)",
     )
+    parser.add_argument(
+        "--tac-action",
+        choices=["on", "off", "cycle", "status", "list",
+                 "edl", "fastboot", "normal", "recovery", "shell"],
+        default="cycle",
+        help=(
+            "TACDev action for --mode debug:\n"
+            "  on     – power on the board\n"
+            "  off    – power off the board\n"
+            "  cycle  – power cycle (off -> sleep -> on)\n"
+            "  status – show device info and runtime status\n"
+            "  list   – list all TAC devices"
+        ),
+    )
+    parser.add_argument(
+        "--shell-script",
+        default="",
+        help=(
+            "Shell script or command to run on the Windows host "
+            "(used with --mode debug --tac-action shell). "
+            "Example: --shell-script flash.bat"
+        ),
+    )
+    parser.add_argument(
+        "--log-duration",
+        type=float,
+        default=60.0,
+        help="Seconds to capture serial log after power cycle (default: 60, used with --mode cycle-log)",
+    )
+    parser.add_argument(
+        "--log-output",
+        default="/tmp/serial_logs/boot_log.txt",
+        help="File path to save the serial log (default: /tmp/serial_logs/boot_log.txt, used with --mode cycle-log)",
+    )
     args = parser.parse_args()
 
     if args.mode == "demo":
@@ -301,3 +555,7 @@ if __name__ == "__main__":
         run_agent_demo(args.host, args.task)
     elif args.mode == "monitor":
         run_serial_monitor(args.host)
+    elif args.mode == "debug":
+        run_tac_debug(args.host, args.tac_action, args.shell_script)
+    elif args.mode == "cycle-log":
+        run_cycle_and_log(args.host, args.log_duration, args.log_output)

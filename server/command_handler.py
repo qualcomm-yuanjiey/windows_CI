@@ -17,7 +17,7 @@ Configuration keys used
   fastboot.default_timeout  – default fastboot command timeout (seconds)
   fastboot.device_serial    – default fastboot device serial (empty = first device)
 
-  tacdev.*              – see tacdev_handler.py
+  tacdev.*              – see dispatch_handler.py
 """
 
 import logging
@@ -96,7 +96,7 @@ class CommandHandler:
     fastboot          – run any fastboot command
     shell             – run a command on the Windows host (cmd.exe)
 
-    TACDev request types (delegated to TACDevHandler)
+    TACDev request types (delegated to DispatchHandler)
     --------------------------------------------------
     tac_list_devices    – list all TAC devices (index, VTP, port, serial)
     tac_get_versions    – get Alpaca / TAC library versions
@@ -122,10 +122,10 @@ class CommandHandler:
         self._fb_timeout = int(cfg["fastboot"]["default_timeout"])
         self._fb_serial = cfg["fastboot"].get("device_serial", "").strip()
 
-        # Lazy-import TACDevHandler so the server starts even if TACDev is absent
+        # Lazy-import DispatchHandler so the server starts even if TACDev is absent
         sys.path.insert(0, str(Path(__file__).parent))
-        from tacdev_handler import TACDevHandler  # noqa: PLC0415
-        self._tac = TACDevHandler(cfg)
+        from dispatch_handler import DispatchHandler  # noqa: PLC0415
+        self._tac = DispatchHandler(cfg)
 
     # ------------------------------------------------------------------
     # Dispatch
@@ -136,7 +136,7 @@ class CommandHandler:
         req_type = request.get("type", "").lower()
         payload = request.get("payload", {})
 
-        # TACDev requests are delegated to TACDevHandler
+        # TACDev requests are delegated to DispatchHandler
         if req_type.startswith("tac_"):
             return self._tac.dispatch(request)
 
