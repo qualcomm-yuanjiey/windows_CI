@@ -18,3 +18,42 @@ bridge:
 serial_log:
   default_save_dir: "/tmp/serial_logs"   # Default directory for captured serial logs
   default_duration: 60                   # Default capture duration in seconds
+
+# ============================================================
+# Timeout settings
+# All values are in seconds unless noted otherwise.
+#
+# Idle timeout problem:
+#   The bridge server drops a command connection after
+#   command_idle_timeout seconds of no traffic (default 300 s).
+#   If your sequence contains long-running steps (e.g. a slow
+#   flash or a long wait), increase command_idle_timeout here AND
+#   set the matching value on the server side
+#   (server/windows_bridge_server.py line ~138).
+# ============================================================
+timeouts:
+  # --- Connection & idle ---
+  connect_timeout: 10          # TCP connect attempt limit (BridgeClient)
+  command_idle_timeout: null   # Keep-alive window for the command connection.
+                               # null = never timeout (matches server default).
+                               # Set to a number (seconds) if you want to drop
+                               # idle connections; must match the server's value.
+
+  # --- Command-type defaults (used when a sequence step omits 'timeout') ---
+  adb_default: 30              # adb shell / generic ADB commands
+  adb_push: 60                 # adb push (file transfer)
+  adb_pull: 60                 # adb pull (file transfer)
+  fastboot_default: 120        # fastboot flash / erase / generic commands
+  fastboot_boot: 120           # fastboot boot <image>
+  windows_shell: 60            # cmd.exe commands on the Windows host
+  linux_shell: 60              # bash commands on this Linux client
+
+  # --- Serial capture ---
+  serial_recv_timeout: 3000    # Max idle seconds on the serial log socket during
+                               # capture (50 min – covers extended boot sequences)
+  serial_connect_retry_delay: 3  # Seconds to wait before re-trying a failed
+                                 # serial connection
+  capture_thread_start_wait: 1   # Seconds to let the capture thread connect
+                                 # before the next sequence step runs
+  capture_thread_stop_wait: 5    # Seconds to wait for the capture thread to exit
+                                 # cleanly after stop_uart

@@ -37,6 +37,11 @@ logging.basicConfig(
 log = logging.getLogger("sequence_runner")
 
 
+def _to_float_or_none(value):
+    """Return float(value) or None if value is None (disables the timeout)."""
+    return None if value is None else float(value)
+
+
 # ---------------------------------------------------------------------------
 # Sequence runner
 # ---------------------------------------------------------------------------
@@ -70,11 +75,13 @@ class SequenceRunner:
     #       linux_shell  → runs locally on this Linux client via /bin/bash
 
     def __init__(self, host: str, command_port: int = 9000,
-                 serial_log_port: int = 9001, auth_token: str = ""):
+                 serial_log_port: int = 9001, auth_token: str = "",
+                 timeouts: dict = None):
         self.host             = host
         self.command_port     = command_port
         self.serial_log_port  = serial_log_port
         self.auth_token       = auth_token
+        self._t               = timeouts or {}
 
         # serial capture state
         self._capture_lines: list  = []
@@ -98,7 +105,7 @@ class SequenceRunner:
             host=self.host,
             command_port=self.command_port,
             auth_token=self.auth_token,
-            recv_timeout=300,
+            recv_timeout=_to_float_or_none(self._t.get("command_idle_timeout", 300)),
         ) as client:
             for idx, step in enumerate(sequence, 1):
                 step_id = step.get("id", f"step_{idx}")
@@ -244,13 +251,14 @@ class SequenceRunner:
                     host=self.host,
                     serial_log_port=self.serial_log_port,
                     auth_token=self.auth_token,
-                    recv_timeout=30.0,
+                    recv_timeout=float(self._t.get("serial_recv_timeout", 3000.0)),
                 )
                 try:
                     rx.connect()
                 except Exception as exc:
-                    log.warning("Serial capture: connect failed (%s) – retrying in 3s", exc)
-                    time.sleep(3)
+                    log.warning("Serial capture: connect failed (%s) – retrying in %ss", exc,
+                                self._t.get("serial_connect_retry_delay", 3))
+                    time.sleep(float(self._t.get("serial_connect_retry_delay", 3)))
                     continue
                 try:
                     for entry in rx:
@@ -268,19 +276,21 @@ class SequenceRunner:
                                 f"[{ts}] *** {entry_type.upper()}: {msg} ***"
                             )
                 except Exception as exc:
-                    log.warning("Serial capture: stream error (%s) – reconnecting in 3s", exc)
-                    time.sleep(3)
+                    log.warning("Serial capture: stream error (%s) – reconnecting in %ss", exc,
+                                self._t.get("serial_connect_retry_delay", 3))
+                    time.sleep(float(self._t.get("serial_connect_retry_delay", 3)))
                 finally:
                     rx.disconnect()
                 if not self._capture_stop.is_set():
-                    log.info("Serial capture: stream ended – reconnecting in 3s …")
-                    time.sleep(3)
+                    log.info("Serial capture: stream ended – reconnecting in %ss …",
+                             self._t.get("serial_connect_retry_delay", 3))
+                    time.sleep(float(self._t.get("serial_connect_retry_delay", 3)))
 
         self._capture_thread = threading.Thread(
             target=_capture, daemon=True, name="serial-capture"
         )
         self._capture_thread.start()
-        time.sleep(1.0)   # let the thread connect before next step
+        time.sleep(float(self._t.get("capture_thread_start_wait", 1.0)))
         return True
 
     def _act_stop_uart(self, _client, params: dict) -> bool:
@@ -296,7 +306,7 @@ class SequenceRunner:
                 log.info("Capture interrupted by user")
             finally:
                 self._capture_stop.set()
-                self._capture_thread.join(timeout=5)
+                self._capture_thread.join(timeout=float(self._t.get("capture_thread_stop_wait", 5)))
 
         # save
         out_path = Path(output)
@@ -357,7 +367,7 @@ class SequenceRunner:
         return self._check(
             client.fastboot(cmd,
                             serial=params.get("serial", ""),
-                            timeout=int(params.get("timeout", 120))),
+                            timeout=int(params.get("timeout", self._t.get("fastboot_default", 120)))),
             f"fastboot {cmd}"
         )
 
@@ -369,7 +379,7 @@ class SequenceRunner:
         return self._check(
             client.fastboot_boot(image,
                                  serial=params.get("serial", ""),
-                                 timeout=int(params.get("timeout", 120))),
+                                 timeout=int(params.get("timeout", self._t.get("fastboot_boot", 120)))),
             f"fastboot_boot {image}"
         )
 
@@ -381,7 +391,7 @@ class SequenceRunner:
         return self._check(
             client.adb(cmd,
                        serial=params.get("serial", ""),
-                       timeout=int(params.get("timeout", 30))),
+                       timeout=int(params.get("timeout", self._t.get("adb_default", 30)))),
             f"adb {cmd}"
         )
 
@@ -389,7 +399,7 @@ class SequenceRunner:
         return self._check(
             client.adb_push(params["local"], params["remote"],
                             serial=params.get("serial", ""),
-                            timeout=int(params.get("timeout", 60))),
+                            timeout=int(params.get("timeout", self._t.get("adb_push", 60)))),
             "adb_push"
         )
 
@@ -398,7 +408,7 @@ class SequenceRunner:
             client.adb_pull(params["remote"],
                             local=params.get("local", "."),
                             serial=params.get("serial", ""),
-                            timeout=int(params.get("timeout", 60))),
+                            timeout=int(params.get("timeout", self._t.get("adb_pull", 60)))),
             "adb_pull"
         )
 
@@ -410,7 +420,7 @@ class SequenceRunner:
         success_patterns    = params.get("success_patterns", None)
         allowed_returncodes = params.get("allowed_returncodes", None)
         ignore_stderr       = bool(params.get("ignore_stderr", False))
-        cmd_timeout = int(params.get("timeout", 60))
+        cmd_timeout = int(params.get("timeout", self._t.get("windows_shell", 60)))
         client.set_recv_timeout(cmd_timeout + 30)
         return self._check(
             client.shell(cmd, timeout=cmd_timeout),
@@ -426,7 +436,7 @@ class SequenceRunner:
         if not cmd:
             log.error("linux_shell action requires 'command' param")
             return False
-        timeout = int(params.get("timeout", 60))
+        timeout = int(params.get("timeout", self._t.get("linux_shell", 60)))
         log.info("linux_shell (local) running: %s", cmd)
         try:
             proc = subprocess.run(
@@ -509,6 +519,7 @@ if __name__ == "__main__":
     # Load client config
     cfg        = load_client_config(args.config)
     bridge_cfg = cfg.get("bridge", {})
+    timeouts   = cfg.get("timeouts", {})
 
     host             = args.host or bridge_cfg.get("host", "192.168.1.100")
     command_port     = int(bridge_cfg.get("command_port", 9000))

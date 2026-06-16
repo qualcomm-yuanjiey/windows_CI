@@ -65,10 +65,11 @@ class BridgeClient:
         Secret token if the server requires authentication (default "").
     connect_timeout : float
         Seconds to wait when establishing the TCP connection.
-    recv_timeout : float
-        Seconds to wait for a response from the server.
-        TACDev power-cycle commands block for ~10 s (2 × 5 s sleep) on the
-        server side, so this should be at least 30 s.
+    recv_timeout : float or None
+        Seconds to wait for a response from the server.  Pass None to wait
+        indefinitely (no timeout).  TACDev power-cycle commands block for
+        ~10 s (2 × 5 s sleep) on the server side, so this should be at
+        least 30 s when set to a number.
     auto_reconnect : bool
         Automatically reconnect on connection loss before retrying a command.
     """
@@ -510,6 +511,7 @@ class BridgeClient:
             if self.auto_reconnect and not retried:
                 log.info("Reconnecting and retrying ...")
                 time.sleep(1)
+                self.connect()
                 return self._send(req_type, payload, retried=True)
             raise BridgeClientError(f"Connection lost: {exc}") from exc
 

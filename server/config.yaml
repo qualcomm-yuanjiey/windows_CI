@@ -8,6 +8,8 @@ server:
   serial_log_port: 9001     # Port for streaming serial logs
   auth_token: ""            # Set a secret token to require auth (empty = no auth)
   max_clients: 5            # Max simultaneous command clients
+  command_idle_timeout: null  # Seconds before an idle command client is dropped.
+                              # Set to null (or omit) to never timeout.
 
 adb:
   path: "adb"               # Full path to adb.exe, or just "adb" if on PATH

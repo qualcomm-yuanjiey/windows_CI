@@ -214,16 +214,26 @@ class SerialLogManager:
             except asyncio.CancelledError:
                 break
 
+            # Collect all currently available items in one pass to minimise
+            # lock acquisitions and reduce per-item event-loop overhead.
+            batch = [item]
+            while True:
+                try:
+                    batch.append(self._raw_queue.get_nowait())
+                except asyncio.QueueEmpty:
+                    break
+
             async with self._sub_lock:
                 subs = list(self._subscribers)
 
             for q in subs:
-                try:
-                    q.put_nowait(item)
-                except asyncio.QueueFull:
-                    log.warning("Subscriber queue full – dropping oldest item")
+                for it in batch:
                     try:
-                        q.get_nowait()
-                        q.put_nowait(item)
-                    except Exception:  # noqa: BLE001
-                        pass
+                        q.put_nowait(it)
+                    except asyncio.QueueFull:
+                        log.warning("Subscriber queue full – dropping oldest item")
+                        try:
+                            q.get_nowait()
+                            q.put_nowait(it)
+                        except Exception:  # noqa: BLE001
+                            pass

@@ -110,6 +110,8 @@ class CommandServer:
         self._auth_token = cfg["server"].get("auth_token", "")
         self._active_clients = 0
         self._max_clients = int(cfg["server"].get("max_clients", 5))
+        raw_idle = cfg["server"].get("command_idle_timeout", 300)
+        self._idle_timeout = float(raw_idle) if raw_idle is not None else None
 
     async def handle_client(
         self,
@@ -135,7 +137,10 @@ class CommandServer:
         try:
             while True:
                 try:
-                    raw = await asyncio.wait_for(reader.readline(), timeout=300)
+                    if self._idle_timeout is None:
+                        raw = await reader.readline()
+                    else:
+                        raw = await asyncio.wait_for(reader.readline(), timeout=self._idle_timeout)
                 except asyncio.TimeoutError:
                     log.info("Command client %s idle timeout", peer)
                     break
@@ -247,7 +252,15 @@ class SerialLogServer:
                     await writer.drain()
                     continue
 
+                # Drain all currently queued items in one TCP write to avoid
+                # falling behind when the serial port bursts many lines at once.
                 writer.write(json.dumps(item).encode() + b"\n")
+                while True:
+                    try:
+                        extra = queue.get_nowait()
+                    except asyncio.QueueEmpty:
+                        break
+                    writer.write(json.dumps(extra).encode() + b"\n")
                 await writer.drain()
 
         except (ConnectionResetError, BrokenPipeError):
