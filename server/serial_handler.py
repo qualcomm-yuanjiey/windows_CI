@@ -92,7 +92,7 @@ class SerialLogManager:
 
     async def subscribe(self) -> asyncio.Queue:
         """Return a new asyncio.Queue that will receive serial log dicts."""
-        q: asyncio.Queue = asyncio.Queue(maxsize=2000)
+        q: asyncio.Queue = asyncio.Queue(maxsize=20000)
         async with self._sub_lock:
             self._subscribers.append(q)
         log.debug("New serial subscriber (total=%d)", len(self._subscribers))

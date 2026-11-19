@@ -52,10 +52,38 @@ sequence:
     action: linux_shell
     params:
       command: "cd /local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/upstream_linux-next/linux-sheepdog && \
-       python3 sheepdog-slave.py --repo-config template-slave-qli.ini --local=/local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/github/qli-mainline/kernel \
-       --compile-config qli-config --board-config talos_config.yaml --build_only"
+        python3 sheepdog-slave.py --repo-config template-slave-qli.ini --local=/local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/upstream_linux-next/linux-sheepdog/linux-next \
+        --compile-config defconfig --board-config hamoa_evk_config.yaml --build_only"
       timeout: 3600
     on_fail: abort
+
+  #- id: compile_repo
+  #  action: linux_shell
+  #  params:
+  #    command: "cd /local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/upstream_linux-next/linux-sheepdog && \
+  #     python3 sheepdog-slave.py --repo-config template-slave-qli.ini --local=/local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/github/qli-mainline/kernel \
+  #     --compile-config qli-config --board-config hamoa_evk_config.yaml --build_only"
+  #    timeout: 3600
+  #  on_fail: abort
+
+  #- id: compile_repo
+  #  action: linux_shell
+  #  params:
+  #    command: "cd /local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/upstream_linux-next/linux-sheepdog && \
+  #     python3 sheepdog-slave.py --repo-config template-slave-qli.ini --local=/local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/github/qli-mainline/ubuntu-qcom-kernel \
+  #     --compile-config qli-config --board-config hamoa_evk_config.yaml --build_only"
+  #    timeout: 3600
+  #  on_fail: abort
+
+
+  #- id: compile_repo
+  #  action: linux_shell
+  #  params:
+  #    command: "cd /local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/upstream_linux-next/linux-sheepdog && \
+  #      python3 sheepdog-slave.py --repo-config template-slave-qli.ini --local=/local/mnt/workspace/yyj/develop_linux/git-repository/Talos_repository/upstream_linux-next/linux-sheepdog/linux-next \
+  #      --compile-config defconfig --board-config purwa_evk_config.yaml --build_only"
+  #    timeout: 3600
+  #  on_fail: abort
 
   - id: power_off
     action: power_off
@@ -70,7 +98,7 @@ sequence:
   - id: flash_image
     action: windows_shell
     params:
-      command: "talos_shell246.bat"
+      command: "hamoa-evk_shell246.bat"
       timeout: 180
       #ignore_stderr: true
     on_fail: abort
@@ -83,7 +111,7 @@ sequence:
   - id: record_log
     action: stop_uart
     params:
-      duration: 60                                    # total seconds to capture from boot
+      duration: 120000                                  # total seconds to capture from boot
 
   - id: power_off
     action: power_off

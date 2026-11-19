@@ -250,12 +250,15 @@ def run_tac_debug(host: str, action: str, shell_script: str = ""):
     normal   – boot to Normal (Android) mode
     recovery – boot to Recovery mode
     shell    – run a shell script / command on the Windows host (use with --shell-script)
+    execute_action – run a Windows cmd command on the host, e.g.
+                     --tac-action execute_action "dir C:\\"
     """
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), "client"))
     from linux_client import BridgeClient, BridgeClientError
 
     valid_actions = ("on", "off", "cycle", "status", "list",
-                     "edl", "fastboot", "normal", "recovery", "shell")
+                     "edl", "fastboot", "normal", "recovery", "shell",
+                     "execute_action")
     if action not in valid_actions:
         print(f"[ERROR] Unknown tac-action \'{action}\'. Choose from: {', '.join(valid_actions)}")
         sys.exit(1)
@@ -267,7 +270,7 @@ def run_tac_debug(host: str, action: str, shell_script: str = ""):
     try:
         # For the shell action the script may run up to 300 s; give the
         # socket an extra 60 s buffer so it does not time out mid-run.
-        recv_timeout = 360 if action == "shell" else 120
+        recv_timeout = 360 if action in ("shell", "execute_action") else 120
         with BridgeClient(host=host, command_port=COMMAND_PORT,
                           auth_token=AUTH_TOKEN,
                           recv_timeout=recv_timeout) as client:
@@ -327,9 +330,13 @@ def run_tac_debug(host: str, action: str, shell_script: str = ""):
                 print(result.get("stdout", ""))
                 print(f"status: {result['status']}")
 
-            elif action == "shell":
+            elif action in ("shell", "execute_action"):
                 if not shell_script:
-                    print("[ERROR] --shell-script is required for action 'shell'")
+                    if action == "shell":
+                        print("[ERROR] --shell-script is required for action 'shell'")
+                    else:
+                        print("[ERROR] a command is required, e.g. "
+                              "--tac-action execute_action \"dir C:\\\"")
                     sys.exit(1)
                 print(f"\n[SHELL] Running on Windows host: {shell_script} …")
                 result = client.shell(shell_script, timeout=300)
@@ -516,7 +523,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--tac-action",
         choices=["on", "off", "cycle", "status", "list",
-                 "edl", "fastboot", "normal", "recovery", "shell"],
+                 "edl", "fastboot", "normal", "recovery", "shell",
+                 "execute_action"],
         default="cycle",
         help=(
             "TACDev action for --mode debug:\n"
@@ -524,7 +532,17 @@ if __name__ == "__main__":
             "  off    – power off the board\n"
             "  cycle  – power cycle (off -> sleep -> on)\n"
             "  status – show device info and runtime status\n"
-            "  list   – list all TAC devices"
+            "  list   – list all TAC devices\n"
+            "  execute_action \"CMD\" – run a Windows cmd command on the host"
+        ),
+    )
+    parser.add_argument(
+        "action_command",
+        nargs="*",
+        default=[],
+        help=(
+            "Windows cmd command for --tac-action execute_action. "
+            "Example: --tac-action execute_action \"ipconfig /all\""
         ),
     )
     parser.add_argument(
@@ -556,6 +574,9 @@ if __name__ == "__main__":
     elif args.mode == "monitor":
         run_serial_monitor(args.host)
     elif args.mode == "debug":
-        run_tac_debug(args.host, args.tac_action, args.shell_script)
+        shell_script = args.shell_script
+        if args.tac_action == "execute_action" and args.action_command:
+            shell_script = " ".join(args.action_command)
+        run_tac_debug(args.host, args.tac_action, shell_script)
     elif args.mode == "cycle-log":
         run_cycle_and_log(args.host, args.log_duration, args.log_output)

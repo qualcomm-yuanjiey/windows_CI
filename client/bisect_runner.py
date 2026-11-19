@@ -62,7 +62,7 @@ def get_commits(begin_commit: str, end_commit: str) -> list:
 
     result = subprocess.run(
         ["git", "-C", str(KERNEL_REPO),
-         "log", "--oneline", "--no-decorate", "-1000"],
+         "log", "--oneline", "--no-decorate", "-10000"],
         capture_output=True, text=True,
     )
     if result.returncode != 0:
@@ -130,7 +130,7 @@ def show_commit_list(commits: list):
 
 def generate_sequence(commit_hash: str, template: Path, out_dir: Path, index: int) -> Path:
     """Render the template for commit_hash and write to bisect/tmp/<commit_hash>.yaml."""
-    log_path = str(LOG_DIR / f"{index}_{commit_hash}_serial_log")
+    log_path = str(LOG_DIR / "2"/f"{index}_{commit_hash}_serial_log")
     rendered = (
         template.read_text(encoding="utf-8")
         .replace("{commit_id}", commit_hash)

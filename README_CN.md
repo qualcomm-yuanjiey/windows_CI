@@ -141,6 +141,7 @@ python example_agent.py --host 10.64.68.116 --mode demo
 | `normal`   | 正常启动（Android / Linux） |
 | `recovery` | 进入 Recovery 模式 |
 | `shell`    | 在 Windows 主机上执行脚本或命令（配合 `--shell-script` 使用） |
+| `execute_action` | 在 Windows 主机上执行 cmd 命令（命令直接跟在动作后面作为位置参数） |
 
 ### 4.1 电源与启动模式
 
@@ -240,6 +241,20 @@ status: ok  returncode: 0
 
 > **提示**：`shell` 动作不会自动切换启动模式，如需先进入 EDL 再刷机，请先执行 `--tac-action edl`，再执行 `--tac-action shell`，或使用 `sequence_runner` 将多步骤串联。
 
+### 4.3 在 Windows 主机上执行命令（execute_action）
+
+`--tac-action execute_action` 与 `shell` 功能相同，区别在于命令直接作为位置参数跟在动作后面，无需 `--shell-script`，适合带较多参数的工具调用（如 emmcdl 刷写单个分区）。超时默认 300 秒。
+
+```bash
+# 使用 EMMCDL 向 SPI-NOR 刷写 uefi_dtb_a 分区
+python example_agent.py --host 10.64.68.116 --mode debug --tac-action execute_action 'C:\Users\yuanjiey\Downloads\EMMCDL.exe -f Z:\yyj\test\images\spinor-cdt\xbl_s_devprg_ns.melf -memoryname spinor -p COM14 -b uefi_dtb_a Y:\Hamoa_IOT.UBUN.1.0.r1-00116-STD.INT.DESKTOP-1\common\build\bin\HAMOA_bootbinaries\spinor\uefi_dtbs_gunyah.xz'
+
+# 执行单条 Windows 命令
+python example_agent.py --host 10.64.68.116 --mode debug --tac-action execute_action "ipconfig /all"
+```
+
+> **注意**：在 Linux shell 中请用**单引号**包裹含 Windows 路径的命令，避免反斜杠 `\` 被 bash 转义。刷机前需先通过 `--tac-action edl` 让设备进入 EDL 模式，并确认 `-p` 指定的 COM 口与设备一致。
+
 ---
 
 ## 5. cycle-log 模式 — 掉电重启并采集串口日志
@@ -303,6 +318,7 @@ python client/sequence_runner.py --host 10.64.68.116
 | `--host` | `192.168.1.100` | Windows Bridge Server IP |
 | `--sequence` | `client/sequence/base/sequence.yaml` | 序列配置文件路径 |
 | `--config` | `client/config.yaml` | 客户端配置文件路径 |
+python client/sequence_runner.py --host 10.64.68.116 --sequence client/sequence/base/sequence_reboot_uart.yaml
 
 ### 6.2 序列文件目录结构
 
